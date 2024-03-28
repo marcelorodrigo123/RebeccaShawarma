@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Log in</title>
+    <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../login.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="title1.jfif">
+</head>
+
+<body>
+    <div class="move">
+        <button class="back-button" onclick="goBack()">Back</button>
+        <div class="text">
+            <h1>Delicious Treats! </h1>
+        </div>
+        <div class="img-move">
+            <div class="food1"><img src="../../food1.png"></div>
+            <div class="food2"><img src="../../food2.png"></div>
+            <div class="food3"><img src="../../food2.png"></div>
+        </div>
+    </div>
+    <div class="move2"></div>
+    <form class="form" id="loginForm" action="../log_in.php" method="POST" onsubmit="return validateForm()">
+        <div class="head-admin">
+            <h1>Log in</h1>
+        </div>
+        <div class="head-container">
+            <div style="margin-bottom:-10px;margin-left:3px;">
+                <label class="label">Username</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="usernameInput" placeholder="Username *" name="username" style="color:black;"
+                    required>
+                <i class="fa fa-user"></i>
+            </div>
+            <div style="margin-bottom:10px;margin-left:3px;">
+                <label class="label">Password</label>
+            </div>
+            <div class="input-container">
+                <input type="password" id="passwordInput" placeholder="Password *" name="password" style="color:black;"
+                    required>
+                <i class="fa fa-lock"></i>
+            </div>
+        </div>
+        <div class="create-forgot">
+            <a class="forgot" href="#">Forgot Password ?</a>
+            <a class="create" href="create.html"> Create Account</a>
+        </div>
+        <div class="head-login">
+            <h2><button type="submit" class="login" name="login">Log in</button></h2>
+        </div>
+        <div id="errorMessage" style="color: red; display: none;margin-top:10px;">Invalid username or password.</div>
+    </form>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function validateForm(event) {
+            var username = document.getElementById('usernameInput').value.trim();
+            var password = document.getElementById('passwordInput').value.trim();
+            var errorMessage = document.getElementById('errorMessage');
+
+            if (username === '' || password === '') {
+                errorMessage.textContent = 'Please enter username and password.';
+                errorMessage.style.display = 'block';
+                event.preventDefault(); // Prevent form submission
+                return false;
+            }
+
+            // You can add an AJAX request here to check the credentials asynchronously
+            // For simplicity, I'll just show the error message directly here
+
+            // Simulating incorrect login attempt
+            if (username === 'invalidUser' || password === 'invalidPassword') {
+                errorMessage.textContent = 'Invalid username or password.';
+                errorMessage.style.display = 'block';
+                event.preventDefault(); // Prevent form submission
+                return false;
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+
+</html>

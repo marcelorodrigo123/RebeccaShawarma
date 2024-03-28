@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Menu</title>
+    <link href="../store.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+  </head>
+<header>
+    <nav class="nav">
+        <div class="head">
+            <button  class="back" onclick="goBack()">Back</button>
+        
+        </div>
+    </nav>
+</header>
+<body>
+        <div class="Box-Menu">
+            <div class="main-box">
+                <div class="image-container">
+                    <img src="../../img1.png" alt="Shawarma Image" class="img">
+                    <div class="overlay">
+                        <h1 class="text">Shawarma 1</h1>
+                        <p class="del"><del style="color:orange">₱55.25</del> </p>
+                        <p class="new-price">₱45.25</p>
+                    </div>
+                </div>
+                <div class="quantity">
+                    <button class="quantity-btn-minus minus">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1">
+                    <button class="quantity-btn-plus plus">+</button>
+                </div>
+                <div class="buttons">
+                    <a class="buy-now-btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function goBack(){
+        window.history.back();
+    }
+  document.addEventListener('DOMContentLoaded', function() {
+    const minusBtn = document.querySelector('.minus');
+    const plusBtn = document.querySelector('.plus');
+    const input = document.querySelector('.quantity-input');
+
+    minusBtn.addEventListener('click', function() {
+      let value = parseInt(input.value);
+      if (value > 1) {
+        input.value = value - 1;
+      }
+    });
+
+    plusBtn.addEventListener('click', function() {
+      let value = parseInt(input.value);
+      input.value = value + 1;
+    });
+
+    input.addEventListener('input', function() {
+      let value = parseInt(input.value);
+      if (isNaN(value) || value < 1) {
+        input.value = 1;
+      }
+    });
+  });
+</script>
+</html>

@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Bebas Neue';
+}
+
+body {
+    background-color: #272727;
+}
+.nav{
+    height:80px;
+    width:100%;
+}
+.nav .head{
+    display:flex;
+    color:white;
+}
+.head{
+    padding:15px;
+}
+.head h1{
+    display:flex;
+    justify-content: right;
+    align-items:right;
+    padding:10px;
+    border-radius: 50%;;
+}
+.link-icon{
+    padding:1rem 1rem 0.1rem 1rem;
+    border-radius:50%;
+    margin-bottom:2.7rem;
+    margin-left:74rem;
+    
+}
+.link-icon:hover{
+    background-color: rgb(54, 52, 52);
+    border-radius:50%;
+    transition:.5s;
+}
+.menu-icon{
+    width:3rem;
+    height:2.5rem;
+
+}
+.back{
+    padding:0.2rem 1rem 0.2rem 1rem;
+    margin-bottom:4rem;
+    margin-left:1.7rem;
+    font-size:3vh;
+    border-radius:0.5rem;
+    letter-spacing:1px;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+}
+.back:hover{
+    color:#151515;
+    background-color: rgb(255, 136, 0);
+    transition:.5s;
+}
+/*Box menu*/
+.Box-Menu {
+    margin: 0rem 16rem 5rem 16rem;
+}
+
+.main-box {
+    flex-direction: column;
+    padding: 10rem;
+    background-color: white;
+}
+.img{
+    margin-top:3rem;
+}
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.747);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+    height: 70%;
+}
+
+.overlay h1 {
+    margin-top:30px;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+  }
+  .overlay .del  {
+    margin-top:30px;
+    font-size:5vh;
+    color:white;
+    display:flex;
+    justify-content:center;
+  }
+  .overlay .new-price{
+    font-size:7vh;
+    color:white;
+    display:flex;
+    justify-content:center;
+  }
+/* Quantity */
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.quantity-btn-minus{
+    background-color: #151515;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+.quantity-btn-minus:hover{
+    color:black;
+    background-color: red;
+}
+.quantity-btn-plus {
+    background-color: #151515;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn-plus:hover {
+    background-color: rgb(14, 185, 14);
+}
+
+.quantity-input {
+    width: 50px;
+    color:white;
+    background-color: #272727;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin: 0 10px;
+    padding: 5px;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: green;
+}
+
+/* Buy Now Buttons */
+.buttons {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.buy-now-btn,
+.see-more-btn {
+    padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+    font-size: 1.4em;
+    background-color: #151515;
+    color:white;
+    border: none;
+    cursor: pointer;
+    margin: 0 1rem;
+    white-space: nowrap;
+    border-radius:0.5rem;
+}
+
+.see-more-btn:hover {
+    background-color: rgb(2, 87, 2);
+}
+.buy-now-btn:hover{
+    background-color: rgb(189, 128, 16);
+}

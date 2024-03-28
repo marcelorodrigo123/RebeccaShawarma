@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Foods</title>
+    <link href="../main-menu.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="food2.png">
+    <link href='https://fonts.googleapis.com/css?family=Inika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inria Serif' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="links">
+            <h1>MENU</h1>
+            <div class="link_move">
+                <a href="menu-drink.html">DRINKS</a>
+                <a href="main-menu.html">FOODS</a>
+                <a href="home.html">HOME</a>
+            </div>
+        </div>
+    </div>
+    <div class="Box-Menu1" id="foods">
+        <!-- Content for foods menu -->
+    </div>
+    <div class="Box-Menu2" id="drinks">
+        <!-- Content for drinks menu -->
+    </div>
+    <div class="Box-Menu3" id="desserts">
+        <!-- Content for desserts menu -->
+    </div>
+    <div class="Box-Menu">
+
+        <div class="main-box">
+            <!--Item 1-->
+            <div class="item-box" onclick="openModal('Pork Shawarma', 100.25)">
+                <div href="store.html" class="item" id="item1">
+                 
+                </div>
+                <div class="content1">
+                    <p class="text1">Pork Shawarma</p>
+                    <p class="del1"><del>₱135.25</del> </p>
+                    <p class="new-price1" id="price1">₱100.25</p>
+                </div>
+                <div class="buy-button1" style="margin-bottom:4rem;">
+                    <a href="#" class="buy1">BUY NOW!</a>
+                </div>
+            </div>
+            <!--Item 2-->
+            <div class="item-box" onclick="openModal('Shawarma 1', 120.25)">
+                <div href="store2.html" class="item" id="item2">
+                    
+                </div>
+                <div class="content" id="item_content" >
+                    <p class="text">Shawarma 1</p>
+                    <p class="del"><del>₱125.25</del> </p>
+                    <p class="new-price" id="price2">₱120.25</p>
+                </div>
+                <div class="buy-button">
+                    <a href="#" class="buy">BUY NOW!</a>
+                </div>
+            </div>
+            <!--Item 3-->
+            <div class="item-box" onclick="openModal('Shawarma 1', 150.25)">
+                <div href="store3.html" class="item" id="item3">
+                  
+                </div>
+                <div class="content">
+                    <p class="text">Shawarma 1</p>
+                    <p class="del"><del>₱155.25</del> </p>
+                    <p class="new-price" id="price3">₱150.25</p>
+                </div>
+                <div class="buy-button">
+                    <a href="#" class="buy">BUY NOW!</a>
+                </div>
+            </div>
+            <!--Item 4-->
+            <div class="item-box" onclick="openModal('Pork Shawarma', 170.25)">
+                <div href="store.html" class="item" id="item4">
+                   
+                </div>
+                <div class="content1" style="margin-top:4.4rem;">
+                    <p class="text1">Pork Shawarma</p>
+                    <p class="del1"><del>₱255.25</del> </p>
+                    <p class="new-price1" id="price4">₱170.25</p>
+                </div>
+                <div class="buy-button1" style="margin-bottom:4rem;">
+                    <a href="#" class="buy1">BUY NOW!</a>
+                </div>
+            </div>
+            <!--Item 5-->
+            <div class="item-box" onclick="openModal('Shawarma 1', 200.25)">
+                <div href="store2.html" class="item" id="item5">
+                   
+                </div>
+                <div class="content" style="margin-top:-3rem;">
+                    <p class="text">Shawarma 1</p>
+                    <p class="del"><del>₱300.25</del> </p>
+                    <p class="new-price" id="price5">₱200.25</p>
+                </div>
+                <div class="buy-button">
+                    <a href="#" class="buy">BUY NOW!</a>
+                </div>
+            </div>
+            <!--Item 6-->
+            <div class="item-box" onclick="openModal('Shawarma 1', 220.25)">
+                <div href="store3.html" class="item" id="item6">
+                   
+                </div>
+                <div class="content" style="margin-top:-2.8rem;">
+                    <p class="text">Shawarma 1</p>
+                    <p class="del"><del>₱255.25</del> </p>
+                    <p class="new-price" id="price6">₱220.25</p>
+                </div>
+                <div class="buy-button">
+                    <a href="#" class="buy">BUY NOW!</a>
+                </div>
+            </div>
+<!--Item 7-->
+<div class="item-box" onclick="openModal('Pork Shawarma', 260.25)">
+    <div href="store.html" class="item" id="item7">
+      
+    </div>
+    <div class="content1" style="margin-top:-1rem;">
+        <p class="text1">Pork Shawarma</p>
+        <p class="del1"><del>₱355.25</del> </p>
+        <p class="new-price1" id="price7">₱260.25</p>
+    </div>
+    <div class="buy-button1" style="margin-bottom:4rem;">
+        <a href="#" class="buy1">BUY NOW!</a>
+    </div>
+</div>
+<!--Item 8-->
+<div class="item-box" onclick="openModal('Shawarma 1', 325.25)">
+    <div href="store2.html" class="item" id="item8">
+      
+    </div>
+    <div class="content" style="margin-top:-2.4rem;">
+        <p class="text">Shawarma 1</p>
+        <p class="del"><del>₱455.25</del> </p>
+        <p class="new-price" id="price8">₱325.25</p>
+    </div>
+    <div class="buy-button">
+        <a href="#" class="buy">BUY NOW!</a>
+    </div>
+</div>
+<!--Item 9-->
+<div class="item-box" onclick="openModal('Shawarma 1', 235.25)">
+    <div href="store3.html" class="item" id="item9">
+        
+    </div>
+    <div class="content" style="margin-top:-3.5rem;">
+        <p class="text">Shawarma 1</p>
+        <p class="del"><del>₱355.25</del> </p>
+        <p class="new-price" id="price9">₱235.25</p>
+    </div>
+    <div class="buy-button">
+        <a href="#" class="buy">BUY NOW!</a>
+    </div>
+</div>
+<!--Item 10-->
+<div class="item-box" onclick="openModal('Pork Shawarma', 520.25)">
+    <div href="store.html" class="item" id="item10">
+     
+    </div>
+    <div class="content1"style="margin-top:-1.5rem;"> 
+        <p class="text1">Pork Shawarma</p>
+        <p class="del1"><del>₱55.25</del> </p>
+        <p class="new-price1" id="price10">₱445.25</p>
+    </div>
+    <div class="buy-button1" style="margin-bottom:4rem;">
+        <a href="#" class="buy1">BUY NOW!</a>
+    </div>
+</div>
+<!--Item 11-->
+<div class="item-box" onclick="openModal('Shawarma 1', 232.25)">
+    <div href="store2.html" class="item" id="item11">
+        
+    </div>
+    <div class="content" style="margin-top:-3rem;">
+        <p class="text">Shawarma 1</p>
+        <p class="del"><del>₱355.25</del> </p>
+        <p class="new-price" id="price11">₱232.25</p>
+    </div>
+    <div class="buy-button">
+        <a href="#" class="buy">BUY NOW!</a>
+    </div>
+</div>
+<!--Item 12-->
+<div class="item-box" onclick="openModal('Shawarma 1', 345.25)">
+    <div href="store3.html" class="item" id="item12">
+      
+    </div>
+    <div class="content" style="margin-top:-3rem;">
+        <p class="text">Shawarma 1</p>
+        <p class="del"><del>₱365.25</del> </p>
+        <p class="new-price" id="price12">₱345.25</p>
+    </div>
+    <div class="buy-button">
+        <a href="#" class="buy">BUY NOW!</a>
+    </div>
+</div>
+</div>
+</div>
+<div class="sidebar">
+    <div class="bars-icon">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div class="sidebar-header">
+        Shawarma Foods
+    </div>
+    <ul class="sidebar-menu">
+     
+        <li onclick="onclick()" class="click1"><a href="home.html">HOME</a></li>
+        <li onclick="onclick()" class="click1"><a href="main-menu.html">FOODS</a></li>
+        <li onclick="onclick()" class="click1"><a href="menu-drink.html">DRINKS</a></li>
+    </ul>
+</div>
+
+<form id="myModal" class="modal">
+    <div class="modal-content" >
+        <div class="images">
+            <!-- Image -->
+            <img class="img1" src="../../pork_shawarma.png">
+        </div>
+        <!-- Close Button -->
+        <span class="close">&times;</span>
+        <!-- Quantity Selector -->
+        <div class="contents_image">
+             <!-- Item Name -->
+             <p>Item: <span id="modalItemName"></span></p>
+              <!-- Item Price -->
+            <p> <span id="itemPrice"></span></p>
+            <p>Quantity:
+                <button id="minusBtn">-</button>
+                <input type="number" id="quantity" value="1">
+                <button id="plusBtn">+</button>
+            </p>
+            <!-- Total Price -->
+            <p>Total Price: <span id="totalPrice"></span></p>
+            <!-- Delivery/Takeout Options -->
+            <p>Choose Delivery or Takeout:</p>
+            <div class="delivery-options">
+                <button class="delivery-btn" onclick="selectDelivery()">Delivery</button>
+                <button class="takeout-btn" onclick="selectTakeout()">Takeout</button>
+            </div>
+            <!-- Confirm Order Button -->
+            <button id="confirmOrder">Cancel Order</button>
+        </div>
+    </div>
+</form>
+<div id="message" style="display: none;"></div> <!-- Add this message element -->
+ 
+  
+ <!-- Payment Modal -->
+ <div id="payment_modal_2" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close" onclick="hideModal('payment_modal_2')">&times;</span>
+        <h2 style="display:flex;justify-content:center;color:green">Payment Method</h2>
+        <div class="payment-methods">
+            <!-- Ensure onclick attribute is within the <a> tag -->
+            <!--GcashCenter-->
+            <div class="g_cash">
+                <a href="#" style="display:flex;justify-content:center;align-items:center"><img src="../../gcash_logo.jfif" alt="GCash"></a>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+<!-- GCash Payment Modal -->
+<div id="gcashModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="hideModal('gcashModal')">&times;</span>
+        <h2>GCash Payment</h2>
+        <p>Please scan the QR code or use the GCash number below for payment:</p>
+        <!-- GCash Owner Number -->
+        <p>GCash Number: <span id="gcashNumber">XXXXXXXXXX</span></p>
+        <!-- QR Code image -->
+        <div class="qr_move" style="display:flex;justify-content:center;align-items:center">
+            <img src="../../qr_code.jpg" alt="GCash QR Code" style="width:300px;height:300px">
+        </div>
+        <input type="hidden" id="itemNameInput" name="itemName">
+        <input type="hidden" id="quantityInput" name="quantity">
+        <input type="hidden" id="totalPriceInput" name="totalPrice">
+        <input type="hidden" id="orderTypeInput" name="orderType">
+        <!-- Button for confirming payment -->
+        <button onclick="confirmPayment()">Confirm Payment</button>
+    </div>
+</div>
+
+<script>
+// Function to submit the form
+function submitOrderForm() {
+            // Update the hidden input fields with the required data
+            document.getElementById("itemNameInput").value = document.getElementById("modalItemName").innerText;
+            document.getElementById("quantityInput").value = document.getElementById("quantity").value;
+            document.getElementById("totalPriceInput").value = document.getElementById("totalPrice").innerText;
+            document.getElementById("orderTypeInput").value = "Takeout"; // Or "Delivery" depending on your logic
+            
+            // Submit the form
+            document.getElementById("orderForm").submit();
+        }
+     // Function to confirm payment
+     function confirmPayment() {    
+        // Show payment success message
+        showPaymentSuccessMessage();
+        // Close the GCash modal
+        hideModal('gcashModal');
+    }
+
+    // Function to show payment success message
+    function showPaymentSuccessMessage() {
+        // Add logic to display payment success message to the user
+        alert("Payment successful. Thank you!");
+    }
+
+    function showMessage(message) {
+            var messageElement = document.getElementById("message");
+            messageElement.innerText = message;
+            messageElement.style.display = "block";
+        }
+
+        // Call the showMessage function with your desired message
+        showMessage("Your message here.");
+    
+   document.addEventListener('DOMContentLoaded', function() {
+        // Function to submit with GCash only when GCash image is clicked
+        function submitWithGcash() {
+            // Show the GCash modal
+            var gcashModal = document.getElementById('gcashModal');
+            gcashModal.style.display = "block";
+        }
+
+        // Function to hide modal
+        function hideModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        // Add event listener to the GCash image button
+        document.querySelector('.g_cash').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            submitWithGcash(); // Call function to show GCash modal
+        });
+    });
+    
+  // Function to open first modal
+  function openModal() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = "block";
+    }
+
+    // Function to close first modal
+    function closeModal() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = "none";
+    }
+
+    // Function to show second modal
+    function showSecondModal() {
+        var modal = document.getElementById('payment_modal_2');
+        modal.style.display = "block";
+    }
+
+    // Function to hide second modal
+    function hideModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "none";
+    }
+
+    // Function to submit with GCash
+    function submitWithGcash() {
+        // Add logic for GCash payment processing
+        console.log("Processing payment with GCash...");
+    }
+
+    // Function to select delivery
+    function selectDelivery() {
+        showSecondModal(); // Show second modal
+    }
+// Function to submit form data to PHP script using AJAX
+function selectTakeout() {
+    showGCashModal(); // Show GCash modal
+}
+    // Function to submit form data to PHP script using AJAX
+  // Function to submit form data to PHP script using AJAX
+function submitOrderData(orderType) {
+    // Capture form data
+    var itemName = document.getElementById('modalItemName').innerText;
+    var quantity = document.getElementById('quantity').value;
+    var totalPrice = document.getElementById('totalPrice').innerText.substring(1); // Remove '₱' symbol
+
+    // Create FormData object and append data
+    var formData = new FormData();
+    formData.append('itemName', itemName);
+    formData.append('quantity', quantity);
+    formData.append('totalPrice', totalPrice);
+    formData.append('orderType', orderType); // Takeout or Delivery
+
+    // Send AJAX request
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../modal_data_sender.php', true); // Adjust the URL as per your server configuration
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Request was successful
+            var message = "Order placed successfully!"; // Message to display
+            showMessage(message); // Call function to show message
+            showSecondModal();
+        } else {
+            // Request failed
+            var message = "Failed to place order. Please try again later."; // Message to display
+            showMessage(message); // Call function to show message
+        }
+    };
+    xhr.onerror = function () {
+        // Request error
+        var message = "An error occurred while processing your request. Please try again later."; // Message to display
+        showMessage(message); // Call function to show message
+    };
+    xhr.send(formData); // Send form data
+}
+
+// Function to select takeout
+function selectTakeout() {
+    submitOrderData('Takeout');
+}
+
+// Function to select delivery
+function selectDelivery() {
+    submitOrderData('Delivery');
+}
+
+
+    // Function to show message
+    function showMessage(message) {
+        var messageElement = document.getElementById("message");
+        messageElement.innerText = message;
+        messageElement.style.display = "block";
+    }
+
+    // Function to handle form submission
+    document.getElementById('myModal').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission behavior
+        submitFormData(); // Call function to submit form data using AJAX
+    });
+
+
+
+// Constant prices for each item
+const porkShawarmaPrice = 100.25;
+const shawarma1Price = 120.25;
+
+// Function to update total price based on quantity
+function updateTotalPrice() {
+    var quantity = parseInt(document.getElementById('quantity').value);
+    var itemPrice = parseFloat(document.getElementById('itemPrice').innerText.substring(1)); // Get item price without '₱' symbol
+    var totalPriceElement = document.getElementById('totalPrice');
+    var totalPrice = quantity * itemPrice;
+
+    // Update the total price element with the new total
+    totalPriceElement.innerText = '₱' + totalPrice.toFixed(2);
+}
+
+// Plus Button Click Event
+document.getElementById("plusBtn").addEventListener("click", function () {
+    var quantityInput = document.getElementById("quantity");
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+    // Call updateTotalPrice to recalculate total price
+    updateTotalPrice();
+});
+
+// Minus Button Click Event
+document.getElementById("minusBtn").addEventListener("click", function () {
+    var quantityInput = document.getElementById("quantity");
+    var quantity = parseInt(quantityInput.value);
+    if (quantity > 1) {
+        quantityInput.value = quantity - 1;
+        // Call updateTotalPrice to recalculate total price
+        updateTotalPrice();
+    }
+});
+
+function openModal(itemName, itemPrice) {
+    var modal = document.getElementById("myModal");
+    var modalImage = document.querySelector('.img1');
+    var clickedItemBox = event.target.closest('.item-box');
+    var imageUrl = window.getComputedStyle(clickedItemBox.querySelector('.item')).backgroundImage.slice(5, -2); // Get background image source
+    modalImage.src = imageUrl; // Set the image source dynamically
+    modal.style.display = "block";
+    document.getElementById('modalItemName').innerText = itemName;
+    document.getElementById('itemPrice').innerText = '₱' + itemPrice.toFixed(2); // Update item price in modal
+    document.getElementById('quantity').value = 1;
+    updateTotalPrice(); // Call updateTotalPrice to set initial total price
+}
+// Function to close modal and reset quantity and total price
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    document.getElementById('quantity').value = 1;
+    updateTotalPrice(); // Reset total price
+}
+
+// Confirm Order Button Click Event
+document.getElementById("confirmOrder").addEventListener("click", function () {
+    var quantity = document.getElementById("quantity").value;
+    var totalPrice = document.getElementById('totalPrice').innerText;
+
+    console.log("Quantity: " + quantity);
+    console.log("Total Price: " + totalPrice);
+    closeModal(); // Close the modal after confirming the order
+});
+
+// Get the modal and close button
+var modal = document.getElementById("myModal");
+var span = document.querySelector(".close");
+
+// Close modal when close button is clicked
+span.onclick = function () {
+    closeModal(); // Close the modal and reset quantity and total price
+}
+
+// Close modal when clicking outside the modal
+window.onclick = function (event) {
+    if (event.target == modal) {
+        closeModal(); // Close the modal and reset quantity and total price
+    }
+}
+
+// Initialize the sidebar
+document.addEventListener("DOMContentLoaded", function () {
+    var sidebar = document.querySelector('.sidebar');
+    var barsIcon = document.querySelector('.bars-icon');
+    var sidebarMenu = document.querySelectorAll('.sidebar-menu li a');
+
+    barsIcon.addEventListener('click', function () {
+        if (sidebar.style.left === '0px') {
+            sidebar.style.left = '-250px';
+        } else {
+            sidebar.style.left = '0px';
+        }
+    });
+
+    sidebarMenu.forEach(function (item) {
+        item.addEventListener('click', function () {
+            sidebar.style.left = '-250px';
+        });
+    });
+});
+
+// Intersection Observer to show/hide content when scrolled
+const item = document.querySelector('.item');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.parentElement.classList.add('scrolled');
+        } else {
+            entry.target.parentElement.classList.remove('scrolled');
+        }
+    });
+}, { root: null, threshold: 0.5 });
+
+// Observe the left-box as well
+observer.observe(item);
+</script>
+</body>
+</html>

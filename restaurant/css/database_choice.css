@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+.head {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.back {
+    font-size: 39px;
+    font-weight: medium;
+    color: black;
+    text-decoration: none;
+    z-index: 99;
+}
+
+.back:hover {
+    color: black;
+    transition: .5s;
+}
+
+body {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+}
+
+.main-container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.dine-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.dinein,
+.dineout {
+    margin-right: 50px;
+    margin-right: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    border-radius: 30px;
+    padding: 20px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dinein a,
+.dineout a {
+    text-decoration: none;
+    color: black;
+    background-color: rgba(221, 218, 218, 0.7);
+    padding: 20px 50px;
+    border-radius: 30px;
+    font-size: 3.3vw;
+    font-weight: medium;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dinein a:hover,
+.dineout a:hover {
+    color: rgb(139, 95, 13);
+    background-color: rgba(221, 218, 218, 0.9);
+}

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+.head {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: transparent;
+}
+
+.back-button:hover {
+    color: yellowgreen;
+    transition:.5s;
+
+}
+body {
+    background-image: url(../section1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter:blur(10px);
+    backdrop-filter: brightness(10%);
+    height:55.1rem;  
+}
+
+.main-container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.dine-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.dinein,
+.dineout {
+    margin-right: 50px;
+    margin-right: 50px;
+    background-image: linear-gradient(rgba(133, 118, 118, 0.5), rgba(224, 222, 222, 0.5));
+    border-radius: 30px;
+    padding: 20px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dinein a,
+.dineout a {
+    text-decoration: none;
+    color: black;
+    background-color:white;
+    padding: 20px 50px;
+    border-radius: 30px;
+    font-size: 6rem;
+    font-weight: medium;
+    font-family: "Bebas Neue";
+    
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dinein a:hover,
+.dineout a:hover {
+    color: #A42107;
+    background-color: rgba(221, 218, 218, 0.9);
+}

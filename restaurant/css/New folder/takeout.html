@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Takeout</title>
+    <link href="../takeout.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="takeout.png">
+</head>
+
+<body>
+    <header>
+        <div class="back" onclick="goBack()"><i class="fa fa-arrow-left"></i> Back</div>
+    </header>
+
+    <div class="container">
+        <form class="takeout-form" id="frm" action="../takeout.php" method="POST">
+            <h1 class="takeout-heading">Shawarma Delivery</h1>
+            <div class="input-group">
+                <label for="customer_name">Customer Name:</label>
+                <input type="text" id="customer_name" name="customer_name" required oninput="validateName(this)">
+            </div>
+            <div class="input-group">
+                <label for="order">Order:</label>
+                <select id="order" name="order" onchange="updateAmountInput()" required>
+                    <option value="select">Select Food</option>
+                    <option value="Food 1">Pork Shawarma</option>
+                    <option value="Food 2">Beef Shawarma</option>
+                    <option value="Food 3">Chicken Shawarma</option>
+                    <option value="Food 4">Shawarma Silog</option>
+                    <option value="Food 5">Food 5</option>
+                    <option value="Food 6">Food 6</option>
+                    <option value="Food 7">Food 7</option>
+                    <option value="Food 8">Food 8</option>
+                    <option value="Food 9">Food 9</option>
+                    <option value="Food 10">Food 10</option>
+                    <option value="Food 11">Food 11</option>
+                    <option value="Food 12">Food 12</option>
+                </select>
+                <!-- Inside the select element -->
+                <img id="foodImage" src="" alt="Food Image" class="selected-food-image">
+                <span class="food-amount" id="foodAmount"></span>
+            </div>
+            <div class="input-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="input-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" onchange="updateAmountInput()"
+                    required>
+            </div>
+            <div class="input-group">
+                <label for="total_amount">Total Amount:</label>
+                <input type="text" id="total_amount" name="total_amount" readonly required>
+            </div>
+            <div class="input-group">
+                <label for="date_ordered">Date Ordered:</label>
+                <input type="date" id="date_ordered" name="date_ordered" required>
+            </div>
+            <div class="input-group">
+                <label for="time_ordered">Time Ordered:</label>
+                <input type="time" id="time_ordered" name="time_ordered" required>
+            </div>
+            <div class="submit">
+                <input type="button" value="Proceed to Payment" onclick="submitForm()">
+            </div>
+        </form>
+    </div>
+<!-- Payment form modal -->
+<div class="modal-overlay" id="payment_modal">
+    <div class="modal-content">
+        <span class="close" onclick="hideModal('payment_modal')">&times;</span>
+        <h2>Choose Payment Method</h2>
+        <div class="payment-methods">
+            <a href="#" onclick="submitWithGCash()"><img src="../../gcash_logo.jfif" alt="GCash"></a>
+            <!-- Add more payment method images with respective URLs -->
+        </div>
+    </div>
+</div>
+
+<!-- GCash payment form modal -->
+<div class="modal-overlay" id="gcash_form" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="hideModal('gcash_form')">&times;</span>
+        <h2>GCash Payment Form</h2>
+        <div class="input-group">
+            <p class="label">Owner's GCash Number:</p>
+            <!-- Display the owner's GCash number -->
+            <p class="owner-gcash-number">09319887714</p>
+        </div>
+        <p>OR</p>
+        <img src="../../gcash_qr.png" style="margin-bottom:2rem;">
+        <!-- QR code canvas -->
+        <div class="submit">
+            <button class="submit-button" type="button" onclick="submitPayment()">Submit Payment</button>
+        </div>
+    </div>
+</div>
+
+<!-- Success and submitted data modal -->
+<div class="modal-overlay" id="success_modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="hideModal('success_modal')">&times;</span>
+        <h2>Payment Successful!</h2>
+        <h3>Submitted Data:</h3>
+        <p><strong>Customer Name:</strong> <span id="submittedCustomerName"></span></p>
+        <p><strong>Order:</strong> <span id="submittedOrder"></span></p>
+        <p><strong>Quantity:</strong> <span id="submittedQuantity"></span></p>
+        <p><strong>Total Amount:</strong> <span id="submittedTotalAmount"></span></p>
+        <!-- Remove this line for now
+        <p style="display:none"><strong>GCash Number:</strong> <span id="submittedGCashNumber"></span></p>
+        -->
+        <button class="reset-button" onclick="resetForm()">OK</button>
+    </div>
+</div>
+
+    <script>
+        function hideModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+    }
+
+        
+        function validateName(input) {
+            input.value = input.value.replace(/[^a-zA-Z0-9\s,.]/g, ''); // Allow only letters, numbers, spaces, and commas
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function updateAmountInput() {
+            const orderInput = document.getElementById('order');
+            const quantityInput = document.getElementById('quantity');
+            const totalAmountInput = document.getElementById('total_amount');
+            const foodPriceMapping = {
+                "Food 1": { price: 10, image: "../../img1.png" },
+                "Food 2": { price: 15, image: "../../img2.png" },
+                // Add other food options here...
+            };
+
+            const selectedFood = orderInput.value;
+            const quantity = parseInt(quantityInput.value);
+            const { price, image } = foodPriceMapping[selectedFood] || { price: 0, image: "" }; // Get the price and image of the selected food or
+            const totalAmount = price * quantity + 20; // Calculate the total amount (including delivery fee)
+
+        // Set the total amount value in the total amount input field
+        totalAmountInput.value = totalAmount.toFixed(2);
+
+        // Display the food image
+        const foodImage = document.getElementById('foodImage');
+        if (selectedFood && image) {
+            foodImage.src = image; // Set the image source
+            foodImage.style.display = "inline"; // Show the food image
+            foodImage.style.marginLeft = "10rem"; // Center the image horizontally
+        } else {
+            foodImage.src = ""; // Clear the image source
+            foodImage.style.display = "none"; // Hide the food image
+        }
+
+        // Display the food price
+        const foodAmount = document.getElementById('foodAmount');
+        if (selectedFood && price) {
+            foodAmount.textContent = "$" + price.toFixed(2); // Set the price text
+            foodAmount.style.display = "inline"; // Show the price
+        } else {
+            foodAmount.textContent = ""; // Clear the price text
+            foodAmount.style.display = "none"; // Hide the price
+        }
+        }
+
+        // Function to show modal
+        function showModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'block';
+        }
+
+        // Function to hide modal
+        function hideModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+        }
+
+        // Function to submit with GCash
+        function submitWithGCash() {
+        showModal('gcash_form');
+        }
+
+        // Function to submit payment
+
+        function submitPayment() {
+            // Retrieve form data
+            var customerName = document.getElementById("customer_name").value;
+            var order = document.getElementById("order").value;
+            var quantity = document.getElementById("quantity").value;
+            var totalAmount = document.getElementById("total_amount").value;
+            var dateOrdered = document.getElementById("date_ordered").value;
+            var timeOrdered = document.getElementById("time_ordered").value;
+
+            // Prepare data to send
+            var formData = new FormData();
+            formData.append('customer_name', customerName);
+            formData.append('order', order);
+            formData.append('quantity', quantity);
+            formData.append('total_amount', totalAmount);
+            formData.append('date_ordered', dateOrdered);
+            formData.append('time_ordered', timeOrdered);
+
+            // Send data via AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '../takeout.php', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // If request was successful, show success modal
+                    document.getElementById('submittedCustomerName').textContent = customerName;
+                    document.getElementById('submittedOrder').textContent = order;
+                    document.getElementById('submittedQuantity').textContent = quantity;
+                    document.getElementById('submittedTotalAmount').textContent = totalAmount;
+                    document.getElementById('success_modal').style.display = 'flex';
+                } else {
+                    // If request failed, show error message or handle accordingly
+                    console.error('Error:', xhr.statusText);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Request failed.');
+            };
+            xhr.send(formData);
+        }
+        function submitForm() {
+            const form = document.getElementById('frm');
+            if (form.checkValidity()) {
+                showModal('payment_modal');
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+        function resetForm() {
+                // Reset form fields
+                var form = document.getElementById('frm');
+                form.reset();
+                
+                // Reset total amount to empty
+                document.getElementsByName("total_amount")[0].value = '';
+
+                // Hide success modal
+                document.getElementById('success_modal').style.display = 'none';
+                // Refresh the page
+                window.location.reload();
+            }
+
+
+</script>
+</body>
+
+</html>

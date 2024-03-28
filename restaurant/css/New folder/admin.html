@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Admin</title>
+    <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../admin.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../title1.jfif">
+</head>
+
+<body>
+    <div class="move">
+        <form class="form" id="loginForm">
+            <div class="admin">
+                <h1>Admin </h1>
+            </div>
+            <div class="head-container">
+                <div class="input-container">
+                    <label for="username" class="username"
+                        style="display:block;font-weight:bold;margin-bottom:-15px;">Username</label>
+                    <input type="text" id="usernameInput" placeholder="Username *" style="color:white;" required>
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="input-container">
+                    <label for="password" class="password"
+                        style="display:block;font-weight:bold;margin-bottom:-15px;">Password</label required>
+                    <input type="password" id="passwordInput" placeholder="Password *">
+                    <i class="fa fa-lock"></i>
+                </div>
+            </div>
+            <div class="head-login">
+                <h2><button type="submit" class="login">Log in</button></h2>
+            </div>
+            <div id="errorMessage" style="color: red; display: none;margin-top:10px;">Invalid username or password.
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get the input fields and error message element
+        const usernameInput = document.getElementById('usernameInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const errorMessage = document.getElementById('errorMessage');
+        const loginForm = document.getElementById('loginForm');
+
+        // Define the correct username and password
+        const correctUsername = "admin";
+        const correctPassword = "adminxxx";
+
+        // Add event listener for form submission
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Check if the input matches the correct username and password
+            if (usernameInput.value === correctUsername && passwordInput.value === correctPassword) {
+                // Redirect to the Directdatabasechoices page for successful login
+                window.location.href = "Databasechoices.html";
+            } else if (usernameInput.value !== correctUsername && passwordInput.value === correctPassword) {
+                // Display error message for incorrect username
+                errorMessage.textContent = 'Incorrect username';
+                errorMessage.style.display = 'flex'; // Change display to 'block'
+            }
+            else if (usernameInput.value == correctUsername && passwordInput.value !== correctPassword) {
+                // Display error message for incorrect username
+                errorMessage.textContent = 'Incorrect Password';
+                errorMessage.style.display = 'flex'; // Change display to 'block'
+            } else if (usernameInput.value.trim() === '' && passwordInput.value.trim() === '') {
+                errorMessage.textContent = 'Please fill int the both fields';
+                errorMessage.style.display = 'block';
+            } else if (usernameInput.value.trim() === '' && passwordInput.value.trim() !== '') {
+                errorMessage.textContent = 'Please fill in username fields';
+                errorMessage.style.display = 'block';
+            } else if (usernameInput.value.trim() !== '' && passwordInput.value.trim() === '') {
+                errorMessage.textContent = 'Please fill in  password fields';
+                errorMessage.style.display = 'block';
+            } else {
+                // Display error message for incorrect password
+                errorMessage.textContent = 'Incorrect password and Incorrect Username';
+                errorMessage.style.display = 'block'; // Change display to 'block'
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma DATABASE Choice</title>
+    <link href="../database_choice.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="dine.jfif">
+    <style>
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 25px;
+            background-color: transparent;
+        }
+
+        .back-button:hover {
+            color: rgba(201, 131, 2, 0.945);
+            transition: .5s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button class="back-button" onclick="goBack()">Back</button>
+    <div class="main-container" id="main">
+        <div class="dine-container">
+            <div class="dinein">
+                <a href="DineinShawarmaDatabase.html">TAKEOUT DATABASE</a>
+            </div>
+            <div class="dineout">
+                <a href="shawarmadatabase.html">DELIVERY DATABASE</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>

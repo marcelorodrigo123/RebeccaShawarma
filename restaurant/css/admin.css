@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inria Sans';
+}
+
+body {
+    height: 100vh;
+    box-shadow: 0px 0px 40px 0px rgba(247, 244, 244, 0.1);
+    background-color: rgba(78, 71, 71, 0.7);
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+}
+
+.move {
+    margin-top: 100px;
+    margin-left: -500px;
+
+}
+
+.admin {
+    margin-top: -10px;
+}
+
+.admin h1 {
+    padding: 20px 200px 20px 200px;
+    width: 100%;
+    background-color: #151515;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    letter-spacing: 2px;
+
+}
+
+.form {
+    position: absolute;
+    border: 1px solid rgb(255, 253, 253);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    border-radius: 10px;
+    background-color: rgb(218, 209, 209);
+    box-shadow: 0 0 12rem rgba(0, 0, 0, 0.1);
+
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+    cursor: text;
+}
+
+.input-container input[type="text"],
+.input-container input[type="password"] {
+    padding-right: 30px;
+    /* Space for the icon */
+    width: 300px;
+    /* Adjust as needed */
+    color: white;
+    /* Set placeholder color */
+}
+
+::placeholder {
+    color: rgb(46, 40, 40);
+}
+
+.input-container i {
+    position: absolute;
+    right: 10px;
+    /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 16px;
+}
+
+input {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(172, 168, 168);
+    border: 1px solid black;
+    cursor: default;
+}
+
+#usernameInput {
+    margin-top: 30px;
+}
+
+#passwordInput {
+    margin-top: 30px;
+}
+
+.head-container {
+    padding: 20px 30px;
+
+}
+
+.fa {
+    font-size: 30px;
+    color: rgb(66, 57, 57);
+}
+
+.head-login {
+    margin-top: -10px;
+    margin-left: -20px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    white-space: nowrap;
+}
+
+button {
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+
+}
+
+.login {
+    background-color: #151515;
+    font-size: 20px;
+    color: white;
+
+}
+
+h2 button {
+    font-size: 28px;
+    text-decoration: none;
+    color: rgb(12, 11, 11);
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+h2 button:hover {
+    color: white;
+    background-color: #272727;
+    transition: 0.5s;
+}

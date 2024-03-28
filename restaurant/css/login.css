@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+.back-button {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: transparent;
+    font-weight: bold;
+    color: white;
+}
+
+.back-button:hover {
+    color: orange;
+    transition: .5s;
+
+}
+
+.img-move {
+    margin-left: 100px;
+}
+
+.food1 img {
+    width: 350px;
+    margin-top: 180px;
+    margin-left: 130px;
+}
+
+.food2 img {
+    width: 380px;
+    margin-top: -160px;
+    margin-left: 270px;
+}
+
+.food3 img {
+    width: 380px;
+    margin-top: -300px;
+    margin-left: -50px;
+}
+
+img {
+    color: none;
+}
+
+img:hover {
+    scale: 1.1;
+    transition: .5s;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+}
+
+.text h1 {
+    margin-top: 100px;
+    font-size: 50px;
+    margin-bottom: -200px;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+
+}
+
+.move {
+    background-color: #151515;
+    width: 120%;
+    height: 100vh;
+    box-shadow: 0 0 10px 20px rgba(29, 22, 22, 0.301);
+}
+
+.move2 {
+    width: 100%;
+    height: 100vh;
+    background-color: #726e6ee7;
+}
+
+.form {
+    box-shadow: 0 0 5px 2px rgba(29, 22, 22, 0.301);
+    position: absolute;
+    background-color: #D1D0D0;
+    display: flex;
+    margin-left: 1050px;
+    margin-top: 150px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 5px 30px 0px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.507);
+}
+
+.head-admin h1 {
+    margin-top: -21px;
+    padding: 20px 150px 20px 150px;
+    margin-left: -1px;
+    color: white;
+    margin-right: -6px;
+    font-size: 40px;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color: #272727;
+    border-radius: 10px 10px 0px 0px
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+    cursor: text;
+}
+
+.input-container input[type="text"],
+.input-container input[type="password"] {
+    padding-right: 30px;
+    /* Space for the icon */
+    width: 300px;
+    /* Adjust as needed */
+    color: white;
+    /* Set placeholder color */
+    background: #D1D0D0;
+}
+
+
+::placeholder {
+    color: rgb(104, 103, 103);
+}
+
+.input-container i {
+    position: absolute;
+    right: 10px;
+    /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 5px;
+}
+
+input {
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 15px 10px 15px 10px;
+    background-color: gray;
+    border: 1px solid rgb(26, 24, 24);
+    cursor: default;
+}
+
+#usernameInput {
+    margin-top: 20px;
+}
+
+#passwordInput {
+    margin-top: 2 0px;
+}
+
+.head-container {
+    padding: 15px 35px;
+
+}
+
+.fa {
+    font-size: 30px;
+    color: rgb(63, 57, 57);
+}
+
+.head-login {
+    margin-top: 60px;
+}
+
+h2 {
+    white-space: nowrap;
+}
+
+button {
+    border: none;
+    padding: 13px 25px 13px 25px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.login {
+    background-color: #04AA6D;
+    font-size: 15px;
+    color: white;
+
+}
+
+h2 button {
+    font-size: 28px;
+    text-decoration: none;
+    color: rgb(12, 11, 11);
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+h2 button:hover {
+    color: white;
+    transition: 0.5s;
+    background-color: #10855a;
+}
+
+/*Forgot / Create*/
+.create-forgot {
+    padding: 20px;
+    margin-bottom: -50px;
+    margin-top: 0px;
+}
+
+.forgot {
+    text-decoration: none;
+    color: black;
+}
+
+.forgot:hover {
+    color: rgba(179, 3, 3, 0.89);
+    transition: .5s;
+}
+
+.create {
+    text-decoration: none;
+    color: black;
+    margin-left: 30px;
+
+}
+
+.create:hover {
+    color: green;
+    transition: .5s;
+}

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takeout in Shawarma</title>
+    <link href="../dinein.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="../../dine.jfif">
+    <style>
+        /* Your CSS styles */
+        #error-message {
+            display: none;
+            color: red;
+            margin-left:38.3rem;
+    
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .payment-methods a {
+            margin: 0 10px;
+        }
+
+        .modal-overlay input[type="text"],
+        .modal-overlay input[type="number"] {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        .modal-overlay button.submit-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-overlay button.submit-button:hover {
+            background-color: #45a049;
+        }
+
+        .reset-button {
+            margin-top: 20px;
+        }
+        /* Modal styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.payment-methods a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.payment-methods img {
+    max-width: 100px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group .label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-field {
+    width: calc(100% - 10px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.submit-button {
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.reset-button {
+    padding: 12px 30px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #d32f2f;
+}
+.back{
+    padding:20px;
+    font-size:20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    cursor:pointer;
+    color:white;
+    margin-left:2rem;
+
+}
+.back:hover{
+    color:rgb(109, 224, 42);
+    transition:.5s;
+}
+
+    </style>
+</head>
+<header>
+    <div class="back" onclick="goBack()"><i class="fa fa-arrow-left"></i> Back</div>
+</header>
+<body>
+    <div class="move" style="margin-top:3rem;">
+        <div id="error-message" style="display: none; color: red;">Please fill in all required fields.</div>
+        <div class="whole-container">
+            <form class="frm" id="frm" style="display:block;">
+                <h1 class="dinein">TAKEOUT</h1>
+                <div class="input-group">
+                    <label class="label">Customer Name:</label>
+                    <input type="text" class="input-field" name="customer_name" oninput="validateName(this)" required>
+                </div>
+                <div class="input-group">
+                    <label class="label">Order:</label>
+                    <select class="input-field" name="order" onchange="updateAmountInput()" required>
+                        <option value="">Select Food</option>
+                        <option value="img1">Shawarma (Price: $10)</option>
+                        <!-- Options for food items -->
+                    </select>
+                    <img id="foodImage" src="../../img1.png" alt="Food Image" class="selected-food-image">
+                    <span class="food-amount" id="foodAmount"></span>
+                </div>
+                <div class="input-group">
+                    <label class="label">Quantity:</label>
+                    <input type="number" class="input-field" name="quantity" min="1" value="1"
+                        onchange="updateAmountInput()" required>
+                </div>
+                <div class="input-group">
+                    <label class="label">Total Amount:</label>
+                    <input type="text" class="input-field" name="total_amount" readonly required>
+                </div>
+
+                <div class="submit">
+                    <button class="submit-button" type="button" onclick="showPaymentModal()">Proceed to Payment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   <!-- Payment form modal -->
+<div class="modal-overlay" id="payment_modal">
+    <div class="modal-content">
+        <span class="close" onclick="hideModal('payment_modal')">&times;</span>
+        <h2>Choose Payment Method</h2>
+        <div class="payment-methods">
+            <a href="#" onclick="submitWithGCash()"><img src="../../gcash_logo.jfif" alt="GCash"></a>
+            <!-- Add more payment method images with respective URLs -->
+        </div>
+    </div>
+</div>
+
+<!-- GCash payment form modal -->
+<div class="modal-overlay" id="gcash_form" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="hideModal('gcash_form')">&times;</span>
+        <h2>GCash Payment Form</h2>
+        <div class="input-group">
+            <p class="label">Owner's GCash Number:</p>
+            <!-- Display the owner's GCash number -->
+            <p class="owner-gcash-number">09319887714</p>
+        </div>
+        <p>OR</p>
+        <img src="../../gcash_qr.png" style="margin-bottom:2rem;">
+        <!-- QR code canvas -->
+        <div class="submit">
+            <button class="submit-button" type="button" onclick="submitPayment()">Submit Payment</button>
+        </div>
+    </div>
+</div>
+
+<!-- Success and submitted data modal -->
+<div class="modal-overlay" id="success_modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="hideModal('success_modal')">&times;</span>
+        <h2>Payment Successful!</h2>
+        <h3>Submitted Data:</h3>
+        <p><strong>Customer Name:</strong> <span id="submittedCustomerName"></span></p>
+        <p><strong>Order:</strong> <span id="submittedOrder"></span></p>
+        <p><strong>Quantity:</strong> <span id="submittedQuantity"></span></p>
+        <p><strong>Total Amount:</strong> <span id="submittedTotalAmount"></span></p>
+        <p style="display:none"><strong>GCash Number:</strong> <span id="submittedGCashNumber"></span></p>
+        <button class="reset-button" onclick="resetForm()">OK</button>
+    </div>
+</div>
+
+    <script>
+        function hideModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+    }
+       function goBack() {
+            window.history.back();
+        }
+
+        function validateName(input) {
+            input.value = input.value.replace(/[^a-zA-Z0-9\s,.]/g, '');
+        }
+
+        function updateAmountInput() {
+            var selectedFood = document.getElementsByName("order")[0].value;
+            var quantity = parseInt(document.getElementsByName("quantity")[0].value);
+
+            // Sample prices for food items
+            var prices = {
+                "img1": 10, // Price of Shawarma
+                // Add more prices for other food items if needed
+            };
+
+            var totalAmount = prices[selectedFood] * quantity;
+            document.getElementsByName("total_amount")[0].value = totalAmount.toFixed(2); // Display total amount with 2 decimal places
+        }
+
+        function showPaymentModal() {
+                    // Check if all form fields are filled
+                    var form = document.getElementById('frm');
+                    var inputs = form.querySelectorAll('input, select');
+                    var isValid = true;
+
+                    inputs.forEach(function(input) {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            // Optionally, you can add visual feedback for the user indicating which fields are required
+                            input.classList.add('invalid-input');
+                        }
+                    });
+
+                    // If all fields are filled, proceed to show the payment modal
+                    if (isValid) {
+                        document.getElementById('payment_modal').style.display = 'flex';
+                        // Hide the error message if it's currently displayed
+                        document.getElementById('error-message').style.display = 'none';
+                    } else {
+                        // Display the error message
+                        document.getElementById('error-message').style.display = 'block';
+                    }
+                }
+
+        function submitWithGCash() {
+            // Show GCash payment form modal
+            document.getElementById('gcash_form').style.display = 'flex';
+            // Hide payment method selection modal
+            document.getElementById('payment_modal').style.display = 'none';
+        }
+        function submitPayment() {
+                // Retrieve form data
+                var customerName = document.getElementsByName("customer_name")[0].value;
+                var order = document.getElementsByName("order")[0].value;
+                var quantity = document.getElementsByName("quantity")[0].value;
+                var totalAmount = document.getElementsByName("total_amount")[0].value;
+
+                // Prepare data to send
+                var formData = new FormData();
+                formData.append('customer_name', customerName);
+                formData.append('order', order);
+                formData.append('quantity', quantity);
+                formData.append('total_amount', totalAmount);
+                // Send data via AJAX
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '../dinein.php', true);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        // If request was successful, show success modal
+                        document.getElementById('submittedCustomerName').textContent = customerName;
+                        document.getElementById('submittedOrder').textContent = order;
+                        document.getElementById('submittedQuantity').textContent = quantity;
+                        document.getElementById('submittedTotalAmount').textContent = totalAmount;
+                        // Remove the following line
+                        // document.getElementById('submittedGCashNumber').textContent = gcashNumber;
+                        document.getElementById('success_modal').style.display = 'flex';
+                    } else {
+                        // If request failed, show error message or handle accordingly
+                        console.error('Error:', xhr.statusText);
+                    }
+                };
+                xhr.onerror = function () {
+                    console.error('Request failed.');
+                };
+                xhr.send(formData);
+            }
+        function resetForm() {
+                // Reset form fields
+                var form = document.getElementById('frm');
+                form.reset();
+                
+                // Reset total amount to empty
+                document.getElementsByName("total_amount")[0].value = '';
+
+                // Hide success modal
+                document.getElementById('success_modal').style.display = 'none';
+                
+                // Display payment modal again
+                showPaymentModal();
+
+                // Refresh the page
+                window.location.reload();
+            }
+
+        
+        
+    </script>
+
+</body>
+
+</html>

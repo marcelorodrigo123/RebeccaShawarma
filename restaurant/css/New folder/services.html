@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawara Restaurant</title>
+    <link rel="stylesheet" href="../services.css">`
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    
+</head>
+<header>
+  <a href="home.html" style="position: absolute; top: 20px; left: 20px; font-size: 1.3em; text-decoration: none; color: white;LETTER-SPACING:1PX;"> Back</a>
+  <h1>Shawarma Heaven Services: Indulge in Flavorful Creations</h1>
+</header>
+<body>
+    <section class="section1" id="section1">
+        <div class="content">
+            <div class="open">
+              <div class="open_container">
+                <h2 style="margin-left:4rem;">Our Open Hours<img src="../../top_clock.png" style="width:50px;margin-left:1rem;"></h2>
+              </div>
+                <p>We are ready to serve you!</p>
+                <p class="time">Monday - Friday: 10AM - 10PM</p>
+                <p class="time">Saturday - Sunday: Closed</p>
+                <div class="status" id="status"></div>
+                <div class="services-buttons">
+                    <a  style="text-decoration:none" href="#" class="button" >Events</a>
+                    <a  style="text-decoration:none" class="button">Takeout</a>
+                    <a  style="text-decoration:none"
+                     class="button">Delivery</a>
+                </div>
+            </div>
+           
+    </section>
+    <div id="carouselExampleControls" class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block" src="../../events.jfif" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block" src="../../takeout_slide.jfif" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block" src="../../delivery_slide.jfif" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-icon" style="font-size:60px;color:white;margin-top:-2rem;margin-left:-1rem;">&laquo;</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-icon"  style="font-size:60px;color:white;margin-top:-2rem;margin-left:-1rem;">&raquo</span>
+        </a>
+      </div>
+    <footer>
+        <p class="contact">Contact us at</p>
+          <div style="margin-top:-1.3rem;" class="contact_container"><img src="../../gmail.png" style="width:33px;height:33px;margin-top:1.2rem;margin-left:0.6rem;margin-right:0.3rem;"></div>
+          <p> rodrigomarcelo643@gmail.com |</p>
+          <div style="margin-top:-1.3rem;"><img src="../../phone.png" style="width:40px;height:40px;margin-top:1rem;margin-left:0.6rem;margin-right:0.3rem;"></div>
+          <p>09319887714</p>
+    </footer>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('#carouselExampleControls');
+    const carouselInner = carousel.querySelector('.carousel-inner');
+    const carouselItems = carouselInner.querySelectorAll('.carousel-item');
+    const prevButton = carousel.querySelector('.carousel-control-prev');
+    const nextButton = carousel.querySelector('.carousel-control-next');
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      carouselInner.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % carouselItems.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+      showSlide(currentIndex);
+    }
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    // Automatic sliding every 5 seconds (adjust as needed)
+    setInterval(nextSlide, 4000); // Adjust timing for slower sliding
+  });
+
+
+
+
+
+        const now = new Date();
+        const day = now.getDay();
+        const hour = now.getHours();
+        const isOpen = (day >= 1 && day <= 5 && hour >= 6 && hour < 22);
+        const statusIndicator = document.getElementById("status");
+        statusIndicator.textContent = isOpen ? "Open Now" : "Closed";
+        statusIndicator.style.fontSize = "24px";
+        statusIndicator.style.marginTop = "3rem";
+        statusIndicator.style.marginBottom= "3rem";
+
+        statusIndicator.style.color = isOpen ? "#4CAF50" : "#F44336";
+    </script>
+</body>
+</html>

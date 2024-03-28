@@ -1,0 +1,159 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #151515;
+}
+.nav{
+    height:80px;
+    width:100%;
+}
+.nav .head{
+    display:flex;
+    color:white;
+}
+.head{
+    padding:15px;
+}
+.arrow {
+    border: solid white;
+    border-width: 0 7px 7px 0;
+    display: inline-block;
+    padding: 20px;
+    margin-top:70px;
+    margin-left:80px;
+    cursor:pointer;
+    }
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+/*Box -Menu*/
+.box-menu{
+    margin-top:100px;
+    padding:10px 20px 10px 20px;
+    background-color: #F6700F;
+    border-radius:40px;
+    margin-left:1000px;
+    white-space:nowrap;
+}
+.menu{
+    font-size:25px;
+    background-color: #F6700F;
+    text-decoration:none;
+    color:white;
+}
+.menu:hover{
+    color:black;
+}
+/*Menu 1*/
+.main-menu1{
+    margin-top:105px;
+    border-radius:40px;
+    margin-left:300px;
+}
+.menu1{
+    font-size:50px;
+    padding:5px 50px 10px 50px;
+    margin-right:970px;
+    margin-left:100px;
+    white-space:nowrap;
+    border-radius:40px;
+    color:white;
+}
+/*Food / Drinks*/
+
+.food-drinks{
+    display:flex;
+    justify-content:center;
+    margin-top:150px;
+    margin-left:100px;
+}
+.food-drinks .food a{
+    margin-right:100px;
+    padding:20px 90px 20px 90px ;
+    background-color: #F6700F;
+    font-size:50px;
+    border-radius:80px;
+    color:white;
+    text-decoration: none;
+    font-weight:bold;
+    color:black;
+
+}
+.food-drinks .drinks a{
+    margin-right:100px;
+    padding:20px 90px 20px 90px ;
+    background-color: #F6700F;
+    font-size:45px;
+    border-radius:80px;
+    color:black;
+    text-decoration: none;
+    font-weight:bold;
+
+}
+.drinks a:hover,
+.food a:hover{
+    color:black;
+
+}
+/*Small boxes / prices*/
+.big-container{
+    padding:130px;
+   
+    margin-right:700px;
+    margin-left:100px;
+    
+}
+.small-box{
+    padding:50px;
+    margin-left:-140px;
+    margin-top:-100px;
+    color:white;
+}
+.circle{
+    padding:1px 20px 1px 20px ;
+    border-radius: 50%;
+    background-color: red;
+    margin-right:50px;
+}
+.small h3{
+    font-size:35px;
+    margin-top:20px;
+    white-space:nowrap;
+}
+.dot{
+    margin-left:100px;
+}
+.price{
+    margin-left:50px;
+    
+}
+/*img- box*/
+.img-box{
+    padding:150px 200px 180px 150px;
+    border-radius: 50%;
+    margin-left:820px;
+    margin-top:-310px;
+
+    animation:imgAnimation 10s ease-in-out infinite;
+}
+@keyframes imgAnimation {
+    0%{
+        background-image: url('coke1.png');
+        background-size:cover;
+        background-repeat: no-repeat;
+
+    }50%{
+        background-image: url('drink1.png');
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+    100%{
+        background-image: url('drink2.png');
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+}
+

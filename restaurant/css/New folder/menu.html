@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Menu</title>
+    <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="menu.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../assets/food2.png">
+    <style>
+        .pic img {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .img1:hover {
+            transform: scale(1.1);
+        }
+
+        .img-move {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .content-wrapper {
+            transition: opacity 0.5s ease-in-out;
+            transform: fade 3s linear;
+        }
+
+        .img1 .content-wrapper {
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+            font-family: 'Inria Sans';
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+    <div class="head">
+        <p><i class="arrow left" onclick="goBack()"></i></p>
+        <div class="box-menu">
+            <a  href ="dine.html" class="menu">Order Now! </a>
+        </div>  
+    </div>
+    <h1 style="color:white;display:flex;justify-content:center;align-items:center;font-size:70px; margin-top:-120px;">MAIN MENU</h1>
+    </nav>
+    <section id="section1">
+        <div class="container">
+            <a class="temporary"></a>
+            <div class="pic">
+                <img class="babaw" src="food1.png" onclick="showContent('food')" style="width: 57%; height: 20vh; border-radius: 50%; margin-left: -120px; margin-top: -60px; margin-bottom:30px;">
+                <img class="sisig" src="coke1.png" onclick="showContent('sisig')" style="width: 57%; height: 20vh; border-radius: 50%; margin-bottom: 33px; margin-top: 40px; margin-left:180px;">
+                <img class="ubos" src="maincake.png" onclick="showContent('ubos')" style="width: 50%; height: 18vh; border-radius: 50%; margin-left: -120px; margin-top:10px;">
+            </div>
+        </div>
+    </section>
+    <div class="whole-container" style="color:white">
+        <section id="one">
+            <div class="maincontainer">
+                <a class="box1  box-container" id="box1">
+                    <div class="img1 img-move" style="margin-top: -100px; ">
+                        <div class="content-wrapper">
+                            <div class="margin1">
+                                <img class="i1" src="food1.png" style="width:200px; height:100%;">
+                            </div>
+                            <h1 style="font-size:35px; display:flex; justify-content: center; align-items:center;">SampleFood</h1>
+                            <p style="font-size:15px; color:orange; display:flex; justify-content: center; align-items:center;margin-top:10px; font-weight:bold;">20% off discount! </p>
+                            <h2><del style="display:flex; justify-content: center; align-items:center;font-style:italic;">₱ 65.25</del></h2>
+                            <h3 style="font-size:50px;display:flex; justify-content: center; align-items:center;font-style:italic">₱ 49.25</h3>
+                            <div class="btn" id="button"><span class="buy" id="buy" href="#">Buy now!</span></div>
+                        </div>
+                    </div>
+                </a>
+                <a class="box2  box-container" id="box2">
+                    <div class="img1 img-move" style="margin-top: -80px;">
+                        <div class="content-wrapper">
+                            <div class="margin2">
+                                <img class="i2" src="foods.png" style="width:200px; height:100%; margin-bottom:20px;">
+                            </div>
+                            <h1 style=" font-size:35px; display:flex; justify-content: center; align-items:center;">SampleFood</h1>
+                            <p style="font-size:15px; color:orange; display:flex; justify-content: center; align-items:center;margin-top:10px;font-weight:bold;">20% off discount! </p>
+                            <h2><del style="display:flex; justify-content: center; align-items:center;font-style:italic;">₱ 80.00</del></h2>
+                            <h3 style="font-size:50px;display:flex; justify-content: center; align-items:center;font-style:italic">₱ 50.00</h3>
+                            <button class="btn" id="button"><span class="buy" id="buy">Buy now!</span></button>
+                        </div>
+                    </div>
+                </a>
+                <a class="box3  box-container" id="box3">
+                    <div class="img1 img-move" style="margin-top: -100px;">
+                        <div class="content-wrapper">
+                            <div class="margin3">
+                                <img class="i3" src="food2.png" style="width:200px; height:100%">
+                            </div>
+                            <h1 style=" font-size:35px; display:flex; justify-content: center; align-items:center;">SampleFood</h1>
+                            <p style="font-size:15px; color:orange; display:flex; justify-content: center; align-items:center;margin-top:10px;font-weight:bold;">20% off discount! </p>
+                            <h2><del style="display:flex; justify-content: center; align-items:center; font-style:italic;">₱ 90.00</del></h2>
+                            <h3 style="font-size:50px;display:flex; justify-content: center; align-items:center;font-style:italic">₱ 70.00</h3>
+                            <button class="btn" id="button"><span class="buy" id="buy">Buy now!</span></button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <nav class="nav">
+                <div class="head">
+                </div>
+                <div class="food-drinks">
+                    <div class="food"><a href="#"> Foods</a></div>
+                </div>
+                <!--Menu 1-->
+                <div class="big-container">
+                    <div class="small-box">
+                        <div class="small"><h3><span class="circle"></span> <span class="name">Food 1 </span><span class="dot">........................</span><span class="price">P 25.25</span></h3></div>
+                        <div class="small"><h3><span class="circle"></span> <span class="name">Food 2 </span><span class="dot">........................</span><span class="price">P 15.25</span></h3></div>
+                        <div class="small"><h3><span class="circle"></span> <span class="name">Food 3 </span> <span class="dot">........................</span><span class="price">P 30.25</span></h3></div>
+                        <div class="img-box"></div>
+                    </div>
+                </div>
+        
+                <!--Menu 2-->
+                <div class="big-containe1r">
+                    <div class="small-box1">
+                        <div class="small1"><h3><span class="circle1"></span> <span class="name">Food 4 </span><span class="dot1">........................</span><span class="price1">P 25.25</span></h3></div>
+                        <div class="small1"><h3><span class="circle1"></span> <span class="name">Food 5 </span><span class="dot1">........................</span><span class="price1">P 15.25</span></h3></div>
+                        <div class="small1"><h3><span class="circle1"></span> <span class="name">Food 6 </span> <span class="dot1">........................</span><span class="price1">P 30.25</span></h3></div>
+                        <div class="img-box1"></div>
+                    </div>
+                </div>
+        
+                <!--Menu 3-->
+                <div class="big-container">
+                    <div class="small-box">
+                        <div class="small"><h3><span class="circle"></span> <span class="name">Food 7 </span><span class="dot">........................</span><span class="price">P 25.25</span></h3></div>
+                        <div class="small"><h3><span class="circle"></span> <span class="name">Food 8 </span><span class="dot">........................</span><span class="price">P 15.25</span></h3></div>
+                        <div class="small"><h3><span class="circle"></span> <span class="name">Food 9 </span> <span class="dot">........................</span><span class="price">P 30.25</span></h3></div>
+                        <div class="img-box"></div>
+                    </div>
+                </div>
+            </nav>
+    </div>
+    <script>
+    function goBack() {
+         window.history.back();
+    }
+            
+        //Sa tulo ka magtuyok
+        function showContent(type) {
+            var babaw = document.querySelector('.babaw');
+            var sisig = document.querySelector('.sisig');
+            var ubos = document.querySelector('.ubos');
+
+            // Reset transform for all images
+            babaw.style.transform = 'none';
+            sisig.style.transform = 'none';
+            ubos.style.transform = 'none';
+
+            // Use setTimeout to delay setting opacity to 1
+            setTimeout(function () {
+                babaw.style.opacity = 1;
+                sisig.style.opacity = 1;
+                ubos.style.opacity = 1;
+            }, 500);
+
+            var box1 = document.getElementById('box1');
+            var box2 = document.getElementById('box2');
+            var box3 = document.getElementById('box3');
+        
+
+            // Set opacity to 0 for all boxes
+            box1.style.backgroundColor = 'none';
+            box2.style.backgroundColor = 'none';
+            box3.style.backgroundColor = 'none';
+
+            switch (type) {
+                case 'food':
+                    updateBoxContent(box1, "food1.png", "SampleFood", "20% off discount!", "₱ 65.25", "₱ 49.25");
+                    updateBoxContent(box2, "foods.png", "SampleFood", "20% off discount!", "₱ 80.00", "₱ 50.00");
+                    updateBoxContent(box3, "food2.png", "SampleFood", "20% off discount!", "₱ 90.00", "₱ 70.00");
+                    
+                    // Change the image source and size for 'sisig' 
+                    box1.querySelector('.i1').src = "food1.png";
+                    box1.querySelector('.i1').style.width = "200px";
+                    box1.querySelector('.i1').style.height = "100%";
+                    box1.querySelector('.i1').style.marginLeft = "0%";
+                    box1.querySelector('.i1').style.marginTop = "30px";
+                    //width-height 
+                    box2.querySelector('.i2').src = "foods.png";
+                    box2.querySelector('.i2').style.width = "200px";
+                    box2.querySelector('.i2').style.height = "100%";
+                    box2.querySelector('.i2').style.marginTop = "20px";
+                    box2.querySelector('.i2').style.marginBottom = "40px";
+                    box2.querySelector('.i2').style.marginLeft = "0%";
+
+                    box3.querySelector('.i3').src = "food2.png";
+                    box3.querySelector('.i3').style.width = "200px";
+                    box3.querySelector('.i3').style.height = "100%";
+                    box3.querySelector('.i3').style.marginTop = "20px";
+                    box3.querySelector('.i3').style.marginBottom = "20px";
+                    box3.querySelector('.i3').style.marginLeft = "0%";
+                    setTimeout(function () {
+                        box1.querySelector('.content-wrapper').style.opacity = 1;
+                        box2.querySelector('.content-wrapper').style.opacity = 1;
+                        box3.querySelector('.content-wrapper').style.opacity = 1;
+                    }, 500);
+
+                    break;
+
+                case 'sisig':
+                    updateBoxContent(box1, "drinks1.png", "ReignBlack", "Special offer!", "₱ 35.00", "₱ 25.00");
+                    updateBoxContent(box2, "drinks2.png", "ShastaGinger", "Limited edition!", "₱ 50.00", "₱ 39.00");
+                    updateBoxContent(box3, "drinks3.png", "7 Up Cold", "Try it now!", "₱ 38.25", "₱ 26.25");
+
+                    // Change the image source and size for 'sisig' 
+                    box1.querySelector('.i1').src = "drinks1.png";
+                    box1.querySelector('.i1').style.width = "100px";
+                    box1.querySelector('.i1').style.height = "100%";
+                    // Center the sisig image
+                    box1.querySelector('.i1').style.marginLeft = "30%";
+                    box1.querySelector('.i1').style.marginTop = "20px";
+                    box1.querySelector('.i1').style.marginBottom = "20px";
+                    box2.querySelector('.i2').src = "drinks2.png";
+                    //width-height 
+                    box2.querySelector('.i2').style.marginLeft = "30%";
+                    box2.querySelector('.i2').style.marginTop = "0px";
+                    box2.querySelector('.i2').style.marginBottom = "20px";
+                    box2.querySelector('.i2').style.width = "100px";
+                    box2.querySelector('.i2').style.height = "100%";
+                    // Center the sisig image 
+                    box3.querySelector('.i3').src = "drinks3.png";
+                    //width-height
+                    box3.querySelector('.i3').style.width = "85px";
+                    box3.querySelector('.i3').style.height = "100%";
+                    // Center the sisig image 
+                    box3.querySelector('.i3').style.marginLeft = "30%";
+                    box3.querySelector('.i3').style.marginTop = "30px";
+                    box3.querySelector('.i3').style.marginBottom = "30px";
+
+                    setTimeout(function () {
+                        box1.querySelector('.content-wrapper').style.opacity = 1;
+                        box2.querySelector('.content-wrapper').style.opacity = 1;
+                        box3.querySelector('.content-wrapper').style.opacity = 1;
+                    }, 500);
+                    break;
+
+                case 'ubos':
+                    updateBoxContent(box1, "des1.png", "Pineapple", "Delicious treat!", "₱ 55.00", "₱ 45.00");
+                    updateBoxContent(box2, "des2.png", "Chocolate", "Irresistible!", "₱ 70.00", "₱ 50.00");
+                    updateBoxContent(box3, "des3.png", "Strawberry", "Sweet delight!", "₱ 77.00", "₱ 66.00");
+
+                    // Change the image source and size for 'sisig' 
+                    box1.querySelector('.i1').src = "des1.png";
+                    box1.querySelector('.i1').style.width = "100px";
+                    box1.querySelector('.i1').style.height = "100%";
+                    // Center the sisig image 
+                    box1.querySelector('.i1').style.marginLeft = "30%";
+                    box1.querySelector('.i1').style.marginTop = "20px";
+                    box1.querySelector('.i1').style.marginBottom = "20px";
+                    box2.querySelector('.i2').src = "des2.png";
+                    //width-height
+                    box2.querySelector('.i2').style.marginLeft = "30%";
+                    box2.querySelector('.i2').style.marginTop = "0px";
+                    box2.querySelector('.i2').style.marginBottom = "20px";
+                    box2.querySelector('.i2').style.width = "100px";
+                    box2.querySelector('.i2').style.height = "100%";
+                    // Center the sisig image 
+                    box3.querySelector('.i3').src = "des3.png";
+                    //width-height
+                    box3.querySelector('.i3').style.width = "100px";
+                    box3.querySelector('.i3').style.height = "100%";
+                    // Center the sisig image 
+                    box3.querySelector('.i3').style.marginLeft = "30%";
+                    box3.querySelector('.i3').style.marginTop = "30px";
+                    box3.querySelector('.i3').style.marginBottom = "30px";
+
+                    setTimeout(function () {
+                        box1.querySelector('.content-wrapper').style.opacity = 1;
+                        box2.querySelector('.content-wrapper').style.opacity = 1;
+                        box3.querySelector('.content-wrapper').style.opacity = 1;
+                    }, 500);
+                    break;
+            }
+
+            switch (type) {
+                case 'food':
+                    // Move to sisig position, sisig to ubos, ubos to babaw, babaw to center
+                    babaw.style.transform = 'translate(150px, 220px) scale(1.3)';
+                    sisig.style.transform = 'translate(-150px, -240px)';
+                    ubos.style.transform = 'translate(0, 0)';
+                    break;
+                case 'sisig':
+                    // No movement for sisig and the others
+                    babaw.style.transform = 'translate(0, 0)';
+                    sisig.style.transform = 'translate(0, 0) scale(1.5)';
+                    ubos.style.transform = 'translate(0, 0)';
+                    break;
+                case 'ubos':
+                    // Alternate movement to sisig position, sisig to babaw, babaw to ubos
+                    sisig.style.transform = 'translate(-153px, 200px)';
+                    ubos.style.transform = 'translate(140px, -240px) scale(1.5)';
+                    babaw.style.transform = 'translate(0, 0)';
+                    break;
+            }
+        }
+
+        function updateBoxContent(box, imgSrc, title, discount, originalPrice, discountedPrice) {
+            var image = box.querySelector('img');
+            var titleElement = box.querySelector('h1');
+            var discountElement = box.querySelector('p');
+            var originalPriceElement = box.querySelector('h2 del');
+            var discountedPriceElement = box.querySelector('h3');
+
+            // Update the content inside the box
+            image.src = imgSrc;
+            titleElement.textContent = title;
+            discountElement.textContent = discount;
+            originalPriceElement.textContent = originalPrice;
+            discountedPriceElement.textContent = discountedPrice;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // section 1 effect
+            var mainContent = document.getElementById('section1');
+
+            // Add 'show' para naay added element para masumpay sa #section1
+            mainContent.classList.add('show');
+        });
+         // Get the "Buy now!" button element
+         var buyButtons = document.querySelectorAll(".btn");
+
+        // Add a click event listener to each "Buy now!" button
+        buyButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                // Specify the URL of the destination HTML file
+                var destinationURL = "dine.html"; // Replace with the desired URL
+
+                // Navigate to the destination URL  
+                window.location.href = destinationURL;
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-color: #726e6ee7;
+}
+
+.color-orange {
+  margin-right: -36px;
+  margin-left: -36px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -36px;
+  margin-bottom: 20px;
+  background-color: #272727;
+  padding: 15px 40px 20px 40px;
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+
+}
+
+.form-container {
+  padding: 20px 20px 20px 20px;
+  margin: 100px 470px 100px 470px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #D1D0D0;
+}
+
+.user {
+  font-size: 25px;
+}
+
+.pass {
+  font-size: 25px;
+}
+
+.re-enter {
+  font-size: 25px;
+
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #D1D0D0;
+  border-radius: 10px;
+  border: 1.5px solid black;
+}
+
+::placeholder {
+  font-size: 20px;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+  background-color: #D1D0D0;
+  outline: none;
+}
+
+.move {
+  margin-top: -30px;
+  margin-left: 150px;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: none;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.cancelbtn,
+.signupbtn {
+  float: left;
+  width: 20%;
+  margin-right: -40px;
+  border-radius: 10px;
+  margin-left: 170px;
+}
+
+.container {
+  padding: 16px;
+}
+
+.clearfix {
+  margin-left: -80px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+
+  .cancelbtn,
+  .signupbtn {
+    width: 100%;
+  }
+}

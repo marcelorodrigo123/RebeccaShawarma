@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shawarma Homepage</title>
+  <link href="../home.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="../../pork_shawarma.png">
+  <link href='https://fonts.googleapis.com/css?family=Inika' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Inria Serif' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'>
+
+</head>
+<style>
+ .modal {
+  margin-top:3rem;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #ffffff; /* Fallback color */
+    background-image: linear-gradient(45deg, #2e2e2e94, #ebebeb); /* Gradient background */
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px; /* Adjust width as needed */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #333; /* Text color */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* FAQ list */
+.faq-list {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+/* FAQ list items */
+.faq-list li {
+    margin-bottom: 20px;
+}
+
+/* FAQ question styling */
+.faq-list li strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Dark text color */
+}
+
+/* FAQ answer styling */
+.faq-list li p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555; /* Slightly darker text color */
+}
+</style>
+<header>
+  <nav class="nav">
+    <div class="head">
+      <h1>SHAWARMA HEAVEN</h1>
+      <a href="#section1" class="home" onclick="activateLink(this)">HOME</a>
+      <a href="#section3" class="about" onclick="activateLink(this)">ABOUT</a>
+      <a href="main-menu.html" class="menu" onclick="activateLink(this)">MENU</a>
+      <a href="services.html" class="services" onclick="activateLink(this)">SERVICES</a>
+      <a href="#section4" class="contact" onclick="activateLink(this)">CONTACT</a>
+      <a href="#section5" class="map"><img src="../../Vector.png" onclick="activateLink(this)" class="loc"></a>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <!--Section 1-->
+  <section class="section1" id="section1">
+    <div class="text-container">
+      <h1>
+        <p>SATISFY YOUR</p>
+        <p class="underline-lighter">CRAVINGS</p>
+      </h1>
+      <p class="phrase">Wrap up your cravings with our</p>
+      <p class="phrase2">irresistible shawarmas!</p>
+    </div>
+    <!--Section2-->
+    <section class="section2" id="section2">
+      <div class="header-dishes">
+        <h1>BEST SELLER</h1>
+
+      </div>
+      <div class="dishes-content">
+        <p>Want to share your story? We would love to read it. This is where you cant tell the world about you, about
+          who you are; what you do; <br>What inspired you to do this, your achievements and more.
+          People often trust organizations they know in and out.</p>
+      </div>
+      <div class="boxes-content">
+
+
+        <div href="store.html" class="container">
+          <div class="overlay">
+            <h1 class="text">Pork Shawarma</h1>
+            <p class="del"><del style="color:orange">₱55.25</del> </p>
+            <p class="new-price">₱45.25</p>
+
+          </div>
+        </div>
+        <div href="store2.html" class="container2">
+          <div class="overlay">
+            <h1 class="text">Beef Shawarma</h1>
+            <p class="del"><del style="color:orange">₱75.25</del> </p>
+            <p class="new-price">₱65.25</p>
+
+
+          </div>
+        </div>
+        <div href="store3.html" class="container3">
+          <div class="overlay">
+            <h1 class="text">Chicken Shawarma</h1>
+            <p class="del"><del style="color:orange">₱45.25</del> </p>
+            <p class="new-price">₱35.25</p>
+
+          </div>
+        </div>
+      </div>
+      <!--Sumpay na content-->
+      <div class="boxes-content2">
+        <div class="container4">
+
+          <!--Pork Shawarma-->
+          <p>
+            Pork shawarma is a variation of the traditional Middle Eastern dish, typically featuring thinly sliced,
+            marinated pork that is roasted on a vertical rotisserie. The succulent pork is often seasoned with a blend
+            of spices such as cumin, paprika, garlic, and coriander, and served wrapped in flatbread with various
+            toppings and sauces for a delicious and flavorful meal.</p>
+        </div>
+        <div class="container5">
+          <!--Beef Shawarma-->
+          <p> Beef shawarma is a savory Middle Eastern dish featuring thinly sliced, marinated beef that is
+            traditionally cooked on a vertical rotisserie. The tender, seasoned beef is often served wrapped in
+            flatbread with a variety of accompaniments such as tahini sauce, vegetables, and pickles, offering a
+            flavorful and satisfying dining experience.</p>
+        </div>
+        <div class="container6">
+
+          <!--Chicken Shawarma-->
+          <p>Chicken shawarma is a Middle Eastern dish of seasoned, marinated chicken cooked on a vertical rotisserie,
+            resulting in tender meat with a crispy exterior. Served in pita bread or on a platter with accompaniments
+            like tahini sauce, it's known for its bold spices and juicy texture, enjoyed globally as a popular street
+            food and restaurant staple.</p>
+        </div>
+      </div>
+      <div class="bot-title">
+        <h1>SHAWARMA HEAVEN</h1>
+      </div>
+    </section>
+
+    <!--Section3-->
+    <section class="section3" id="section3">
+      <div class="about-us">
+        <div class="about-head">
+          <h1>ABOUT US</h1>
+          <p class="line2"></p>
+        </div>
+      </div>
+      <div class="share-story">
+      </div>
+      <div class="two-side">
+        <div class="left-box"></div>
+        <div class="right-contents" animation-timeline="scroll(nearest) block">
+          <h1>WELCOME TO SHAWARMA HEAVEN</h1>
+          <div class="right-move" animation-timeline="scroll(nearest) block">
+            <p>Where savory aromas and bold flavors collide to create an unforgettable culinary experience. Nestled in
+              the heart of Cebu City, Shawarma Heaven is your go-to destination for authentic Middle Eastern cuisine.
+              Indulge in our mouthwatering shawarmas, expertly seasoned and roasted to perfection, served in warm,
+              fluffy pitas or atop fragrant rice. </p>
+          </div>
+          <div class="right-move2" animation-timeline="scroll(nearest) block">
+            <p>Our menu boasts an array of tantalizing options, from traditional chicken and beef shawarmas to
+              vegetarian delights, all crafted with fresh ingredients and bursting with exotic spices. Whether you're
+              craving a quick bite on the go or a leisurely meal with friends and family, Shawarma Heaven promises to
+              transport your taste buds to gastronomic bliss. Step into our welcoming ambiance and savor the taste of
+              true shawarma perfection at Shawarma Heaven.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Section4-->
+    <section class="section4" id="section4">
+      <div class="contact-us">
+        <div class="contact-head">
+          <h1>Contact Us</h1>
+          <p class="line4"></p>
+        </div>
+        <div class="touch">
+          <h1>HOW TO GET IN TOUCH? </h1>
+        </div>
+        <div class="contact-head-p">
+          <p>This section only proves that you are approachable and ready to accept reviews and prior bookings. People
+            love to be associated with </p>
+          <p class="business">businesses that are friendly and communicate well. Encourage them to get in touch with
+            you.</p>
+        </div>
+        <!--Locations -->
+
+        <div class="location-head">
+          <label class="label1">ADDRESS</label>
+          <p>Urgello Street, Sambag I, Cebu City</p>
+          <label>PHONE NUMBER</label>
+          <p>09319887714</p>
+          <label>EMAIL ADDRESS</label>
+          <p style="margin-bottom:70px;">rodrigomarcelo643@gmal.com</p>
+          <label> FOLLOW ME</label>
+          <div class="follow-links">
+            <a href="https://web.facebook.com/rebecca.cinco.146" class="box1"><i class="fa fa-facebook"></i></a>
+            <div class="insta-img">
+              <a href="https://www.instagram.com/?hl=en" class="box3"><img class="insta" src="../../insta.png"></a>
+            </div>
+          </div>
+          <!--Forms -->
+          <div class="container8">
+            <form method="POST" class="form-container">
+              <div class="name-email-inputs">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <textarea id="subject" name="subject" placeholder="Subject" required></textarea>
+              <textarea id="message" name="message" placeholder="Message" required></textarea>
+              <button type="submit" class="submit-button"><i class="fa fa-send-o"></i> Send</button>
+              <div class="form-response" id="formResponse"></div>
+            </form>
+          </div>
+        </div>
+    </section>
+    <section class="section5" id="section5">
+      <div class="whole-location">
+        <div class="Map">
+          <div class="map-location">
+            <h1>EXPLORING OUR WORLD:<span class="navigate"> NAVIGATE WITH OUR RESTAURANT</span></h1>
+            <span><img src="../../location.png" style="width:20px;height:30px;margin-left:50px;" class="map_img_bot"></span>
+          </div>
+
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.470892786977!2d123.88742325087301!3d10.304147978942856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99953f1d97939%3A0x4ccf808b2fd174b4!2s133%20MH%20Aznar%20St%2C%20Cebu%20City%2C%206000%20Cebu!5e0!3m2!1sen!2sph!4v1710505017298!5m2!1sen!2sph"
+            width="900" height="550" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+        <div id="carouselExampleControls" class="carousel" style="margin-top:2rem;">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block" src="../../map1.png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block" src="../../map2.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block" src="../../map3.png" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev"  style="cursor:pointer"role="button" data-slide="prev">
+            <span class="carousel-control-icon" style="font-size:60px;color:white;margin-top:-1rem;margin-left:-1rem;">&laquo;</span>
+          </a>
+          <a class="carousel-control-next"  style="cursor:pointer" role="button" data-slide="next">
+            <span class="carousel-control-icon"  style="font-size:60px;color:white;margin-top:-1rem;margin-left:-1rem;">&raquo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+
+        <!--Shawarma Learn-->
+        <div class="footer-box">
+          <h3 class ="learn">LEARN</h3>
+      
+          <h3><a href="costumer_reviews.html" class="anchor-link"><img src="../../review.png"
+                style="width:50px;height:30px;margin-left:-1.9rem; margin-right:2px;margin-bottom:-10px;">Customer
+              Reviews</a></h3>
+          <h3><a href="#products" class="anchor-link" onclick="showAlert_FAQ(event)"><img src="../../question.png"
+                style="width:30px;height:30px;margin-left:-1.3rem; margin-right:10px;margin-bottom:-10px;">FAQs</a></h3>
+        </div>
+        <!--Shawarma More from shawarma-->
+        <div class="footer-box">
+          <h3 class="more" style="margin-left:-1.5rem;">MORE FROM SHAWARMA </h3>
+          <h3><a href="#section3" class="anchor-link"><img src="../../story.png"
+                style="width:20px;height:20px;margin-left:-1.3rem; margin-right:10px;margin-bottom:-3px;">Our Story</a>
+          </h3>
+          
+          <h3><a href="login.html" class="anchor-link"><img src="../../sign.png"
+                style="width:20px;height:20px;margin-left:-1.3rem; margin-right:10px;margin-bottom:-3px;">Sign in </a>
+          </h3>
+        </div>
+        <!--Stay connected-->
+        <div class="footer-box" id="third_footer">
+          <h3 style=" margin-left:-5rem;">LETS STAY CONNECTED</h3>
+          <img src="../../connect.png" style="height:80px;width:250px;margin-left:-5rem;" class="connect">
+          <p style="margin-left:-5rem;">Enter your email to unlock some Coupons </p>
+          <form id="emailForm" class="email-box" style="margin-left:-5rem;" method="post" action="../email_send.php">
+            <input class="email-input" type="email" name="email" placeholder="Your Email" required>
+            <label><span><button type="submit" id="submitButton">SUBMIT</button></span></label>
+        </form>
+          <!--Privacy-->
+          <div class="privacy">
+            <p style="white-space:nowrap"><span><a href="#" onclick="showAlert4(event)">Terms of Service</a> |</span>
+              <span><a href="#" onclick="showAlert5(event)">Privacy Policy </a> | </span><span><a href="#"
+                  onclick="showAlert6(event)">Refund Policy </a>|
+              </span><span><a href="#" onclick="showAlert7(event)">Accessibility Policy</a> </span>
+            </p>
+          </div>
+          <!--Copyright-->
+
+          <div class="copy">
+            <p>&copy; Shawarma Heaven 2024</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal for Frequently Asked Questions -->
+  <div id="faqModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 style="display:flex;justify-content:center;margin-bottom:3rem;">Frequently Asked Questions</h2>
+        <ol class="faq-list">
+            <li>
+                <strong>1. What are your opening hours?</strong>
+                <p>Our restaurant is open from [insert opening hours] on [insert days of the week]. Please note that these hours may vary on holidays or special occasions.</p>
+            </li>
+            <li>
+                <strong>2. Do you offer delivery services?</strong>
+                <p>Yes, we offer delivery services within [insert delivery area]. You can place your order online or by phone, and our delivery team will ensure your food is delivered fresh and on time.</p>
+            </li>
+            <li>
+                <strong>3. What payment methods do you accept?</strong>
+                <p>We accept various payment methods, including cash, credit/debit cards, and mobile payment options such as Apple Pay and Google Pay.</p>
+            </li>
+            <li>
+                <strong>4. Can I customize my shawarma order?</strong>
+                <p>Absolutely! You can customize your shawarma order to suit your preferences. Choose your protein, toppings, sauces, and side dishes to create the perfect meal.</p>
+            </li>
+            <li>
+                <strong>5. Are your ingredients halal?</strong>
+                <p>Yes, all our ingredients are halal-certified, ensuring that our food meets the dietary requirements of our customers.</p>
+            </li>
+            <li>
+                <strong>6. Do you offer vegetarian or vegan options?</strong>
+                <p>Yes, we offer a variety of vegetarian and vegan options, including falafel wraps, hummus plates, and salads. Please ask our staff for recommendations.</p>
+            </li>
+            <li>
+                <strong>7. How can I provide feedback or file a complaint?</strong>
+                <p>We value your feedback! You can provide feedback or file a complaint by contacting us through our website, social media channels, or by speaking with a member of our staff during your visit.</p>
+            </li>
+            <li>
+                <strong>8. Do you cater for events?</strong>
+                <p>Yes, we offer catering services for events of all sizes. Whether you're hosting a corporate lunch or a private party, we can provide delicious shawarma platters and sides to impress your guests.</p>
+            </li>
+            <li>
+                <strong>9. Do you have any special offers or promotions?</strong>
+                <p>We frequently run special offers and promotions, including discounts on certain menu items or meal deals. Be sure to check our website or follow us on social media to stay updated on our latest promotions.</p>
+            </li>
+            <li>
+                <strong>10. Is your restaurant wheelchair accessible?</strong>
+                <p>Yes, our restaurant is wheelchair accessible, and we strive to provide a comfortable dining experience for all our customers.</p>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 style="display:flex;justify-content: center;align-items:center;margin-bottom:3rem;">Terms of Service</h2>
+      <p>
+          <!-- Your Terms of Service content here -->
+          <b>Ordering Process:</b> Outline the process for placing orders through your website or app, including payment methods and delivery options.<br>
+          
+          <b>Pricing and Taxes: </b>Specify the prices of menu items, any applicable taxes, and potential additional fees (e.g., delivery charges).<br>
+          
+            <b>Order Modifications/Cancellations:</b> Explain how customers can modify or cancel their orders and any associated deadlines or fees.<br>
+              <b> Delivery Policies: </b>Detail delivery times, areas covered, and any specific instructions for successful delivery.<br>
+          
+                <b>Returns and Refunds:</b> Clarify your policy regarding returns, exchanges, and refunds for incorrect or unsatisfactory orders.<br>
+          
+                  <b>Intellectual Property:</b> State ownership rights for content, logos, and trademarks associated with your restaurant.<br>
+          
+                    <b>Liability Limitations:</b> Limit your liability for any damages or losses incurred by customers while using your services.<br>
+          
+                      <b>Dispute Resolution:</b> Specify the procedures for resolving disputes, including potential arbitration or mediation processes.<br>
+          
+                        <b>Updates to Terms:</b> Reserve the right to update the terms of service and notify customers of any changes.<br>
+      </p>
+  </div>
+</div>
+
+<!-- Modal for Privacy Policy -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 style="display:flex;justify-content: center;align-items:center;margin-bottom:3rem;">Privacy Policy</h2>
+      <p>
+          <!-- Your Privacy Policy content here -->
+          <b>Information Collection:</b> Explain what type of information you collect from customers (e.g., name, email, phone number) and how it's used.<br>
+            <b>Data Usage: </b>Describe how the collected data is used, whether it's for processing orders, improving services, or marketing purposes.<br>
+              <b>Third-party Sharing:</b> Specify whether you share customer information with any third parties (e.g., delivery partners) and under what circumstances.<br>
+                <b> Data Security:</b> Detail the security measures in place to protect customer data from unauthorized access or misuse.<br>
+                  <b>Cookies: </b>Inform users if you use cookies on your website and how they are utilized (e.g., for website analytics or personalization).<br>
+                    <b>Opt-Out Options:</b> Provide instructions on how users can opt-out of marketing communications or request the deletion of their data.<br>
+                      <b>Legal Compliance:</b> Mention compliance with relevant data protection laws (e.g., GDPR, CCPA) and provide contact information for data-related inquiries.<br>
+      </p>
+  </div>
+</div>
+
+
+<div id="refundPolicyModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 style="display:flex;justify-content: center;align-items:center;margin-bottom:3rem;">Refund Policy</h2>
+      <p>We strive to provide the best service and products. If you are not satisfied with your purchase, please contact us within [number of days] days of receiving your order.</p>
+      <p style="margin-top:2rem">Refunds will be issued for the following reasons:</p>
+      <ol style="margin-bottom:2rem;">
+          <li style="margin-left:3rem;">Incorrect or damaged items received.</li>
+          <li style="margin-left:3rem;">Items not meeting quality expectations.</li>
+      </ol>
+      <p>To request a refund, please contact our customer service team with your order details and reason for refund. Refunds may take [number of days] to process and will be issued back to the original payment method.</p>
+      <p>Note: We reserve the right to refuse refunds for items that have been used or damaged after receipt.</p>
+  </div>
+</div>
+
+<div id="accessibilityPolicyModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 style="display:flex;justify-content: center;align-items:center;margin-bottom:3rem;">Accessibility Policy</h2>
+      <p>At [Your Shawarma Restaurant], we are dedicated to ensuring that our website is accessible to all individuals, including those with disabilities. To achieve this goal, we have implemented various accessibility features, such as alternative text for images, keyboard navigation, and readable fonts with sufficient contrast.</p>
+      <p>These efforts align with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards, ensuring a user-friendly experience for all visitors, regardless of their abilities. We value feedback from our users and continuously strive to enhance the accessibility of our website. If you encounter any accessibility barriers or have suggestions for improvement, please contact us at [contact@email.com].</p>
+      <h3 style="display:flex;justify-content: center;align-items:center;margin-bottom:3rem;margin-top:1.5rem;">Accessibility Statement</h3>
+      <p>Our commitment to accessibility extends to all aspects of our website, from design to functionality. We regularly review and update our accessibility features to ensure compliance with standards and to provide an inclusive experience for everyone. At [Your Shawarma Restaurant], we believe that accessibility is a fundamental aspect of providing exceptional service to our customers, and we are dedicated to maintaining an accessible online environment for all users.</p>
+  </div>
+</div>
+    <!--Sidebar When Screen is small-->
+    <div class="sidebar">
+      <div class="bars-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="sidebar-header">
+        Shawarma Heaven
+      </div>
+      <ul class="sidebar-menu">
+        <li onlick="onclick()" class="home"><a href="home.html"  onclick="activateLink(this)">HOME</a></li>
+        <li onlick="onclick()" class="about"><a href="#section3"  onclick="activateLink(this)">ABOUT</a></li>
+        <li onlick="onclick()" class="menu"><a href="main-menu.html"  onclick="activateLink(this)">MENU</a></li>
+        <li onlick="onclick()" class="services"><a href="services.html"  onclick="activateLink(this)">SERVICES</a></li>
+        <li onlick="onclick()" class="contact"><a href="#section4"  onclick="activateLink(this)">CONTACT</a></li>
+        <a href="#section5" class="map"><img src="../../Vector.png" onclick="activateLink(this)" class="loc"></a>
+      </ul>
+    </div>
+
+  </section>
+
+</body>
+<script>
+window.onload = function() {
+    const discounts = ['10%', '5%', '10%', '5%', '10%'];
+    const usedEmails = []; // Array to track used emails
+    const discountForm = document.getElementById('emailForm');
+    discountForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const emailInput = document.querySelector('.email-input');
+        const email = emailInput.value;
+
+        // Check if email is valid (You can add more robust email validation)
+        if (!validateEmail(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Check if the email has already been used to avail a discount
+        if (usedEmails.includes(email)) {
+            alert('This email has already been used to avail a discount. Please enter another email address.');
+            return;
+        }
+
+        // Check if all discounts are already occupied
+        if (discounts.length === 0) {
+            alert('Sorry, all discounts are already occupied.');
+            return;
+        }
+
+        // Submit the email and available discounts to the server
+        fetch('../email_send.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email, discounts: discounts }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const discountAvailed = discounts.pop(); // Get the last discount in the array
+                usedEmails.push(email); // Add the email to the usedEmails array
+                alert(`Congratulations! You have availed a ${discountAvailed} discount.`);
+                emailInput.value = ''; // Clear the email input field
+            } else {
+                alert('An error occurred. Please try again later.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        });
+    });
+
+    // Function to validate email address
+    function validateEmail(email) {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+};
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the main content elements
+    var mainContent = document.querySelector('.text-container h1 p');
+    var underline = document.querySelector('.text-container h1 .underline-lighter');
+    var small1 = document.querySelector('.text-container  .phrase');
+    var small2 = document.querySelector('.text-container  .phrase2');
+    var header = document.querySelector('.header-dishes');
+    var container = document.querySelector('.container');
+
+    // Add 'show' class to animate
+    mainContent.classList.add('show');
+    underline.classList.add('show');
+    small1.classList.add('show');
+    small2.classList.add('show');
+    header.classList.add('show');
+    container.classList.add('show');
+  });
+
+
+  const elementsToAnimate = document.querySelectorAll('.right-move, .right-move2');
+  const leftBox = document.querySelector('.left-box');
+  const contact = document.querySelector('.contact-head');
+  const container8 = document.querySelector('.container8');
+  const touch = document.querySelector('.touch h1');
+  const head1 = document.querySelector('.share-story');
+  const right = document.querySelector('.right-contents h1');
+  const map = document.querySelector('.map-location');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.parentElement.classList.add('scrolled');
+      } else {
+        entry.target.parentElement.classList.remove('scrolled');
+      }
+    });
+  }, { root: null, threshold: 0.5 });
+
+  elementsToAnimate.forEach(element => {
+    observer.observe(element);
+  });
+
+  // Observe the left-box as well
+  observer.observe(leftBox);
+  observer.observe(contact);
+  observer.observe(container8);
+  observer.observe(touch);
+  observer.observe(head1);
+  observer.observe(right);
+  observer.observe(map);
+
+  //Side bar 
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var sidebar = document.querySelector('.sidebar');
+    var content = document.querySelector('.content');
+    var barsIcon = document.querySelector('.bars-icon');
+    var sidebarMenu = document.querySelectorAll('.sidebar-menu li a');
+
+    barsIcon.addEventListener('click', function () {
+      if (sidebar.style.left === '0px') {
+        sidebar.style.left = '-250px';
+        content.style.marginLeft = '0';
+      } else {
+        sidebar.style.left = '0px';
+        content.style.marginLeft = '-250px';
+      }
+    });
+
+    sidebarMenu.forEach(function (item) {
+      item.addEventListener('click', function () {
+        sidebar.style.left = '-250px';
+        content.style.marginLeft = '0';
+      });
+    });
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.querySelector(".form-container");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Fetch the form data
+      var formData = new FormData(form);
+      clearForm();
+      function clearForm() {
+        // Clear all input fields
+        var inputs = document.querySelectorAll('input');
+        inputs.forEach(function (input) {
+          input.value = '';
+        });
+
+        // Clear textarea field
+        var textarea = document.querySelector('textarea');
+        textarea.value = '';
+        var message = document.getElementById('message');
+        message.value = '';
+
+        // Optionally, reset any other form elements you might have
+      }
+      // Send a POST request to process_form.php
+      fetch("../process_form.php", {
+        method: "POST",
+        body: formData
+      })
+        .then(response => response.text()) // Get the response as text
+        .then(data => {
+          // Display the response message
+          // If the response contains "successfully", show an alert
+          if (data.includes("successfully")) {
+            alert("Message Successfully Sent!");
+          }
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+    });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('#carouselExampleControls');
+    const carouselInner = carousel.querySelector('.carousel-inner');
+    const carouselItems = carouselInner.querySelectorAll('.carousel-item');
+    const prevButton = carousel.querySelector('.carousel-control-prev');
+    const nextButton = carousel.querySelector('.carousel-control-next');
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      carouselInner.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % carouselItems.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+      showSlide(currentIndex);
+    }
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    // Automatic sliding every 5 seconds (adjust as needed)
+    setInterval(nextSlide, 4000); // Adjust timing for slower sliding
+  });
+
+
+
+  // Function to activate the clicked link
+  function activateLink(element) {
+    // Remove active class from all links
+    var links = document.querySelectorAll('.nav .head a')
+    var loc = document.querySelectorAll('.nav .head .loc')
+    links.forEach(function (link) {
+      link.classList.remove('active');
+    });
+
+    // Add active class to the clicked link
+    element.classList.add('active');
+
+    // Check if any link corresponds to the current page
+    links.forEach(function (link) {
+      if (link.getAttribute('href') === window.location.pathname) {
+        link.classList.add('active');
+      }
+    });
+    loc.forEach(function (loc) {
+      loc.classList.remove('active');
+    });
+
+    // Add active class to the clicked link
+    element.classList.add('active');
+
+    // Check if any link corresponds to the current page
+    loc.forEach(function (loc) {
+      if (loc.getAttribute('href') === window.location.pathname) {
+        loc.classList.add('active');
+      }
+    });
+  }
+
+
+  // Function to display modal for Frequently Asked Questions
+  function showAlert_FAQ(event) {
+            event.preventDefault();
+            document.getElementById('faqModal').style.display = "block";
+        }
+
+        // Close the modal when the user clicks on (x)
+        document.getElementsByClassName("close")[0].onclick = function() {
+            document.getElementById('faqModal').style.display = "none";
+        }
+
+        // Close the modal when the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('faqModal')) {
+                document.getElementById('faqModal').style.display = "none";
+            }
+        }
+
+
+
+
+
+        // Get the modal elements
+var termsModal = document.getElementById('termsModal');
+var privacyModal = document.getElementById('privacyModal');
+
+// Get the close buttons
+var closeButtons = document.getElementsByClassName("close");
+
+// Function to display Terms of Service modal
+function showAlert4(event) {
+    event.preventDefault();
+    termsModal.style.display = "block";
+}
+
+// Function to display Privacy Policy modal
+function showAlert5(event) {
+    event.preventDefault();
+    privacyModal.style.display = "block";
+}
+
+// Close the modals when the user clicks on (x)
+for (var i = 0; i < closeButtons.length; i++) {
+    closeButtons[i].onclick = function() {
+        termsModal.style.display = "none";
+        privacyModal.style.display = "none";
+    }
+}
+
+// Close the modals when the user clicks outside of them
+window.onclick = function(event) {
+    if (event.target == termsModal || event.target == privacyModal) {
+        termsModal.style.display = "none";
+        privacyModal.style.display = "none";
+    }
+}
+
+
+// Function to display the refund policy modal
+function showAlert6(event) {
+    event.preventDefault();
+    document.getElementById('refundPolicyModal').style.display = "block";
+}
+
+// Function to display the accessibility policy modal
+function showAlert7(event) {
+    event.preventDefault();
+    document.getElementById('accessibilityPolicyModal').style.display = "block";
+}
+
+// Close the modal when the user clicks on (x)
+document.querySelectorAll(".close").forEach(function(el) {
+    el.onclick = function() {
+        document.querySelectorAll('.modal').forEach(function(modal) {
+            modal.style.display = "none";
+        });
+    }
+});
+
+// Close the modal when the user clicks outside of it
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+    }
+}
+
+    </script>
+</script>
+
+</html>

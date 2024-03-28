@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <link href="../costumer.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../../img1.png">
+    <link href='https://fonts.googleapis.com/css?family=Inika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inria Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inria Serif' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'>
+    <style>
+        /* Your CSS styles here */
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Review form styling */
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: none; /* Hide labels initially */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Review container */
+        .review-container {
+            margin-top: 20px;
+            flex-direction: row;
+            flex-wrap:wrap;
+         
+        }
+
+        .review {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px; /* Added margin-bottom */
+        position: relative;
+        margin-right:30px;
+}
+
+        .review p {
+            margin-bottom: 5px;
+        }
+
+        /* Displayed review box */
+        .display-box {
+            max-width:500px;
+            position: relative;
+            margin-top:3rem;
+            margin-left:2rem;
+            background-repeat: no-repeat;
+            background-size: 200px 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none;
+            display: flex;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.356), rgba(0, 0, 0, 0.5));
+        }
+
+        /* Profile picture */
+        .profile-pic {
+            background-image: url("../anonymous.jfif"); /* Replace with the path to your image */
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+                /* Style for the sign-in options container */
+        .sign-in-options {
+            display: block; /* Change display to block */
+            text-align: center; /* Center the sign-in options */
+            margin-bottom: 20px;
+        }
+
+        /* Style for each sign-in option */
+        .sign-in-options a {
+            text-decoration: none;
+            color: inherit;
+            margin-bottom: 10px; /* Add margin between sign-in options */
+            display: inline-block; /* Display sign-in options in a row */
+        }
+
+        .sign-in-options img {
+            width: 50px; /* Adjust the size of the images */
+            height: 50px;
+        }
+
+        .sign-in-options span {
+            display: block;
+            font-size: 14px; /* Adjust font size for the text */
+        }
+
+    </style>
+</head>
+<header>
+    <div class="back" onclick="goBack()">Back</div>
+</header>
+<body>
+<div class="whole_review">
+    <div class="review_title">
+        <h1>WHAT DO CUSTOMERS SAY?</h1>
+    </div>
+    <div class="reviews_section">
+        <h1>Reviews</h1>
+        <div class="for_reviews">
+            <h1>3</h1>
+            <span class="star_head">
+                <i class="fa fa-star color"></i>
+                <i class="fa fa-star color"></i>
+                <i class="fa fa-star color"></i>
+                <i class="fa fa-star color"></i>
+                <i class="fa fa-star"></i>
+            </span>
+            <span class="customers_update"><span class="added" style="color:rgb(236, 154, 2);">( Customers Added A Review )</span></span>
+            <div class="add_review">
+                <button onclick="openModal()">Add A Review <i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="Box-Menu">
+        <!--The Section of the Already have Reviews And Have Update Reviews-->
+        <div class="main-box">
+            <!--Item 1-->
+            <div class="item-box" id="item_box1">
+                <div class="item" id="item">
+                    <div class="design"></div>
+                    <div class="profile_pic" id="profile_pic1"></div>
+                    <p class="name">Marcelo Rodrigo</p>
+                    <span class="email" id="email1">@marzRodrigo1341</span>
+                    <div class="stars" id="stars">
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="contents" id="contents1">
+                        <p>
+                            "I finally decided to try shawarma after hearing so much buzz about it, and let me tell you, it absolutely lived up to the hype. From the moment I took my first bite, I was hooked. The combination of tender, flavorful meat with the creamy tahini sauce and fresh, crunchy vegetables was simply irresistible. Each bite was a burst of deliciousness that left me craving more."</p>
+                        <p style="margin-top:2rem;">"What really impressed me was how everything came together perfectly inside that warm, soft pita bread. It was like every ingredient was meant to be together. Shawarma has definitely become my new favorite go-to meal. If you haven't tried it yet, do yourself a favor and give it a taste. You won't regret it!"</p>
+                    </div>
+                </div>
+            </div>
+            <!--Item 2-->
+            <div class="item-box" id="item_box2">
+                <div class="item" id="item">
+                    <div class="design"></div>
+                    <div class="profile_pic" id="profile_pic2"></div>
+                    <p class="name" style="margin-left:rem;">Neil Delante</p>
+                    <span class="email" id="email2">@nemoDelante</span>
+                   
+                    <div class="stars">
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="contents" id="contents2">
+                        <p>
+                            "Let me just say, trying shawarma was a game-changer for me. I'd heard people rave about it before, but I never understood the hype until I took that first bite. The combination of flavors and textures is out of this world. The savory meat, the tangy pickles, the creamy garlic sauce - it's like a party in your mouth!"</p>
+                        <p style="margin-top:2rem;">"And don't even get me started on the aroma! The smell alone had me salivating before I even took a bite. Now, shawarma is my ultimate comfort food. It's that perfect blend of satisfying and comforting that always hits the spot. If you're on the fence about trying shawarma, just go for it. Trust me, you won't be disappointed."</p>
+                    </div>
+                </div>
+            </div>
+            <!--Item 3-->
+            <div class="item-box">
+                <div class="item" id="item">
+                    <div class="design"></div>
+                    <div class="profile_pic" id="profile_pic3"></div>
+                    <p class="name">Kin Perez</p>
+                    <span class="email" id="email3">@Perez032</span>
+                    <div class="stars" id="stars_3">
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star color"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="contents" id="contents3">
+                        <p>"Shawarma... where have you been all my life? I finally caved in to the endless recommendations from friends and decided to give it a try. Let me just say, it was like a flavor revelation. The succulent meat, the burst of spices, and the delightful crunch of fresh veggies all wrapped up in that warm, pillowy pita – it was sheer bliss with every bite."</p>
+                        <p style="margin-top:2rem;">"I never knew food could evoke such a sense of satisfaction until I experienced shawarma. It's not just a meal; it's an experience. Whether you're grabbing a quick bite on the go or sitting down to savor every morsel, shawarma delivers on every level. Consider me a shawarma convert – I'll definitely be back for more!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="review-container" id="reviewContainer">
+        <!-- Reviews will be dynamically inserted here -->
+    </div>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1>Review Form</h1>
+            <div class="sign-in-options">
+                <!-- Sign in with Google -->
+                <a href="https://accounts.google.com/signin" target="_blank">
+                    <img src="../../google.png" alt="Sign in with Google">
+                    <span>Sign in with Google</span>
+                </a>
+                <div>Or</div>
+                <!-- Sign in with Facebook -->
+                <a href="https://www.facebook.com/login" target="_blank">
+                    <img src="../../fb.png" alt="Sign in with Facebook" style="width:20%;height:20%;margin-top:6px;margin-bottom:6px;">
+                    <span>Sign in with Facebook</span>
+                </a>
+                <div>Or</div>
+            <p> Rate Us as Anonymous</p>
+            <form onsubmit="submitReview(event)">
+                <label for="name" style="margin-left:-32rem;margin-bottom:1rem;">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name (optional)">
+                <label for="email" style="margin-left:-32rem;margin-bottom:1rem;">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email (optional)">
+                <label for="review" style="margin-left:-30.5rem;margin-bottom:1rem;">Message:</label>
+                <textarea id="review" name="review" rows="4" placeholder="Your review"></textarea>
+                <p id="errorMessage" style="color: red; display: none;">Please fill up all fields.</p>
+                <div class="rating" id="ratingStars">
+                    <label for="rating">Rating:</label><br>
+                    <i class="fa fa-star" onclick="setRating(1)" ></i>
+                    <i class="fa fa-star" onclick="setRating(2)"></i>
+                    <i class="fa fa-star" onclick="setRating(3)"></i>
+                    <i class="fa fa-star" onclick="setRating(4)"></i>
+                    <i class="fa fa-star" onclick="setRating(5)"></i>
+                </div>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+     <footer class="footer"></footer>
+    
+    <script>
+        function goBack(){
+            window.history.back();
+        }
+        function signInWithGoogle() {
+            // Redirect to Google sign in page or perform sign in action
+            window.location.href = "https://accounts.google.com/signin";
+        }
+
+        // Function to sign in with Facebook
+        function signInWithFacebook() {
+            // Redirect to Facebook sign in page or perform sign in action
+            window.location.href = "https://www.facebook.com/login";
+        }
+
+        // JavaScript for Modal functionality
+        function openModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+            // Display labels in the modal
+            var labels = document.querySelectorAll('.modal-content label');
+            labels.forEach(function(label) {
+                label.style.display = "block";
+            });
+        }
+    
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    
+        // Close modal if user clicks outside the modal content
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    
+        function submitReview(event) {
+            event.preventDefault();
+            var rating = document.querySelectorAll('.rating .fa.fa-star.color').length;
+            var review = document.getElementById("review").value;
+    
+            // Check if both rating and review are provided
+            if (rating === 0 || review.trim() === '') {
+                document.getElementById("errorMessage").style.display = "block";
+                return; // Stop the function execution if fields are missing
+            }
+    
+            // Reset error message if previously displayed
+            document.getElementById("errorMessage").style.display = "none";
+    
+            // Proceed with submitting the review
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+    
+            var reviewCountElement = document.querySelector('.for_reviews h1');
+            var reviewCount = parseInt(reviewCountElement.innerText);
+            reviewCount++;
+            reviewCountElement.innerText = reviewCount;
+    
+            var reviewElement = document.createElement("div");
+            reviewElement.classList.add("review");
+            reviewElement.innerHTML = `
+                <div class="display-box">
+                    <div class="profile-pic"></div>
+                    <div>
+                        <p></strong> ${name}</p>
+                        <p></strong> ${email}</p>
+                        <p></strong> ${getStarIcons(rating)}</p>
+                        <p></strong> ${review}</p>
+                    </div>
+                </div>
+            `;
+    
+            // Append the new review before the review container
+            var reviewContainer = document.querySelector('.review-container');
+            reviewContainer.insertBefore(reviewElement, reviewContainer.firstChild);
+    
+            // Clear input fields and reset star ratings
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("review").value = "";
+            resetStarRatings();
+    
+            closeModal();
+        }
+    
+        // Function to generate star icons based on the rating
+        function getStarIcons(rating) {
+            var stars = '';
+            for (var i = 0; i < rating; i++) {
+                stars += '<i class="fa fa-star color"></i>';
+            }
+            for (var i = rating; i < 5; i++) {
+                stars += '<i class="fa fa-star"></i>';
+            }
+            return stars;
+        }
+    
+        function resetStarRatings() {
+            var stars = document.querySelectorAll('.rating .fa.fa-star');
+            stars.forEach(function(star) {
+                star.classList.remove('color');
+            });
+        }
+    
+        function setRating(rating) {
+            // Remove the "color" class from all stars
+            var stars = document.querySelectorAll('.rating .fa.fa-star');
+            stars.forEach(function(star, index) {
+                if (index < rating) {
+                    star.classList.add('color');
+                } else {
+                    star.classList.remove('color');
+                }
+            });
+        }
+    </script>
+    
+    
+    
+    </body>
+    </html>
+    

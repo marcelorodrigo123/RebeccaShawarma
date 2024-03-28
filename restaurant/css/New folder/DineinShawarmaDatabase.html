@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takeout Shawarma Database</title>
+    <style>
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 25px;
+            background-color: transparent;
+        }
+
+        .back-button:hover {
+
+            transition: .5s;
+
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, rgba(68, 66, 66, 0.5), rgba(0, 0, 0, 0.5));
+            color: #333;
+        }
+
+        .container {
+            padding: 10px 50px 50px 50px;
+            border: 1px solid white;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            margin: 3rem 10rem 18rem 10rem;
+            background: linear-gradient(to bottom, rgba(252, 252, 252, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        thead {
+            background-color: #343a40;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background: linear-gradient(to bottom, rgba(252, 252, 252, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        tbody tr:hover {
+            background-color: #e2e6ea;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="back-button" onclick="goBack()">Back</button>
+    <div class="container">
+        <h1>Takeout Data</h1>
+        <table id="ordersTable">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Order</th>
+                    <th>Quantity</th>
+                    <th>Total Amount</th>
+                    <th>Date Ordered</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+        //GOBACK
+
+        function goBack() {
+            window.history.back();
+        }
+        window.onload = function () {
+            fetch('../Dineinshawarmadatabase.php')
+                .then(response => response.json())
+                .then(data => {
+                    // Generate table rows
+                    var rows = '';
+                    data.forEach(order => {
+                        rows += '<tr>';
+                        rows += '<td>' + order.customer_name + '</td>';
+                        rows += '<td>' + order.order_item + '</td>';
+                        rows += '<td>' + order.quantity + '</td>';
+                        rows += '<td>' + order.total_amount + '</td>';
+                        rows += '<td>' + order.order_date + '</td>';
+                        rows += '</tr>';
+                    });
+                    // Insert rows into the table body
+                    document.querySelector('#ordersTable tbody').innerHTML = rows;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        };
+    </script>
+</body>
+
+</html>

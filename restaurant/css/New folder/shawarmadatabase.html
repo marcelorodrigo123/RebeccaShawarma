@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Delivery Database</title>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 25px;
+            background-color: transparent;
+        }
+
+        .back-button:hover {
+            color: black;
+            transition: .5s;
+
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, rgba(68, 66, 66, 0.5), rgba(0, 0, 0, 0.5));
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 10px 50px 50px 50px;
+            border: 1px solid white;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            margin: 3rem 10rem 30.5rem 10rem;
+            background: linear-gradient(to bottom, rgba(252, 252, 252, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+            margin-top: 20px;
+        }
+
+        #ordersTable {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        #ordersTable thead {
+            background-color: #272727;
+            /* Green */
+            color: white;
+        }
+
+        #ordersTable th,
+        #ordersTable td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #ordersTable tbody tr:nth-child(even) {
+            background: linear-gradient(to bottom, rgba(252, 252, 252, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        #ordersTable tbody tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="back-button" onclick="goBack()">Back</button>
+    <div class="container">
+        <h1>SHAWARMA DATABASE</h1>
+        <table id="ordersTable">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Order</th>
+                    <th>Location</th>
+                    <th>Quantity</th>
+                    <th>Total Amount</th>
+                    <th>Date Ordered</th>
+                    <th>Time Ordered</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+
+        }
+        window.onload = function () {
+            // Fetch data from shawarmadatabase.php using AJAX
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Parse JSON response
+                    var orders = JSON.parse(this.responseText);
+
+                    // Generate table rows
+                    var rows = '';
+                    for (var i = 0; i < orders.length; i++) {
+                        rows += '<tr>';
+                        rows += '<td>' + orders[i].customer_name + '</td>';
+                        rows += '<td>' + orders[i].order_item + '</td>';
+                        rows += '<td>' + orders[i].location + '</td>';
+                        rows += '<td>' + orders[i].quantity + '</td>';
+                        rows += '<td>' + orders[i].total_amount + '</td>';
+                        rows += '<td>' + orders[i].date_ordered + '</td>';
+                        rows += '<td>' + orders[i].time_ordered + '</td>';
+                        rows += '</tr>';
+                    }
+
+                    // Insert rows into the table body
+                    document.querySelector('#ordersTable tbody').innerHTML = rows;
+                }
+            };
+            xhttp.open('GET', '../shawarmadatabase.php', true);
+            xhttp.send();
+        };
+    </script>
+</body>
+
+</html>
